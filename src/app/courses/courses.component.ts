@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursesService } from '../services/courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -7,18 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoursesComponent implements OnInit {
   courseTitle = 'Courses List';
-  courseList = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'TypeScript',
-    'Angular',
-    'Nodejs',
-    'MongoDB',
-    'Java',
-    'Python'
-  ];
-  constructor() { }
+  courseList: string[] = [];
+  constructor(public courseService: CoursesService) {
+    this.courseList = this.courseService.courseLists;
+  }
 
   ngOnInit(): void {
   }
@@ -28,6 +21,9 @@ export class CoursesComponent implements OnInit {
   }
   get courseCount(): number {
     return this.courseList.length;
+  }
+  removeCourse(course: string): void {
+    this.courseService.removeCourse(course);
   }
 
 }
