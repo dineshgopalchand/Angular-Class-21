@@ -1,0 +1,11 @@
+<!-- <h3>{{courseTitle}} - ({{getCourseCount()}})</h3> -->
+<h3 title="number of course is {{courseCount}}">{{courseTitle}} ({{courseCount}})</h3>
+<ul *ngIf="courseList.length>0">
+    <li *ngFor="let course of courseList ">
+        {{course}} <button (click)="removeCourse(course)">Remove</button>
+    </li>
+</ul>
+
+<p *ngIf="courseList.length==0">
+    No courses available
+</p>
