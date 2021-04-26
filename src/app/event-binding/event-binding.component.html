@@ -1,0 +1,14 @@
+<h3>{{title}} <small><button class="btn btn-secondary" (click)="showCourseList($event)">{{showCourse?'Hide Course List':'Show Course List'}}</button></small></h3>
+<hr>
+<ul class="list-group" *ngIf="showCourse">
+    <li class="list-group-item" *ngFor="let course of courseList">{{course}}</li>
+</ul>
+<p *ngIf="!showCourse">Course List is not showing</p>
+
+<div class="parent-element" (click)="parentDiv($event)">
+    Parent Element
+    <div class="child-element" (click)="childDiv($event)">
+        button:::::
+        <button (click)="buttonClick($event)">Click me</button>
+    </div>
+</div>
