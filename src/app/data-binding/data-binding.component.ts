@@ -14,9 +14,14 @@ export class DataBindingComponent implements OnInit {
   tableTitle = 'Some Dummy Data';
   colSpan = 2;
   rowSpan = 2;
+
+  isValid = false;
   constructor() { }
 
   ngOnInit(): void {
+  }
+  changeStatus(): void {
+    this.isValid = !this.isValid;
   }
 
 }

@@ -3,7 +3,7 @@
 <div>{{content}}</div>
 
 <hr>
-<h3>Property Binding</h3>
+<!-- <h3>Property Binding</h3> -->
 <!-- <h3 [innerHTML]="title"></h3>
 <h3 [innerText]="title"></h3>
 <h3 [textContent]="title"></h3>
@@ -14,32 +14,34 @@
 
 <!-- Attribute Binding -->
 
-<table [attr.table-title]="tableTitle">
+<!-- <table [attr.table-title]="tableTitle">
     <tr>
         <td>Lorem.</td>
         <td [attr.colspan]="colSpan">Molestiae!</td>
-        <!-- <td>Repellendus.</td> -->
-        <td>Ipsum.</td>
-    </tr>
-    <tr>
-        <td>Lorem.</td>
-        <td [attr.rowspan]="rowSpan">Incidunt.</td>
-        <td>Eaque.</td>
-        <td>Unde.</td>
-    </tr>
-    <tr>
-        <td>Lorem.</td>
-        <!-- <td>Suscipit!</td> -->
-        <td>Officiis.</td>
-        <td>Voluptates?</td>
-    </tr>
-    <tr>
-        <td>Lorem.</td>
-        <td>Maiores?</td>
-        <td>Iste.</td>
-        <td>Itaque.</td>
-    </tr>
-</table>
+        
+<td>Ipsum.</td>
+</tr>
+<tr>
+    <td>Lorem.</td>
+    <td [attr.rowspan]="rowSpan">Incidunt.</td>
+    <td>Eaque.</td>
+    <td>Unde.</td>
+</tr>
+<tr>
+    <td>Lorem.</td>
+    <td>Officiis.</td>
+    <td>Voluptates?</td>
+</tr>
+<tr>
+    <td>Lorem.</td>
+    <td>Maiores?</td>
+    <td>Iste.</td>
+    <td>Itaque.</td>
+</tr>
+</table> -->
+<h3>Class Binding</h3>
+<button class="btn" [class.btn-primary]="isValid" [class.btn-danger]="!isValid">Submit</button>
+<button (click)="changeStatus()">Change Status</button>
+<!-- <button class="btn-danger btn">Success</button> -->
 
-<button class="btn-primary btn">Success</button>
-<button class="btn-danger btn">Success</button>
+<p [class.success]="isValid" [class.error]="!isValid" [style.font-style]="isValid?'italic':'normal'" [style.font-weight]="isValid?'bold':'500'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, ducimus.</p>
