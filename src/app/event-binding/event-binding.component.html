@@ -13,6 +13,6 @@
     </div>
 </div>
 <div class="form-group m-4">
-    <input type="text" class="form-control" name="firstname" (keyup)="updateFirstname($event)">
+    <input type="text" class="form-control" name="firstname" (keyup.Enter)="updateFirstname($event)">
 </div>
 {{firstName}}

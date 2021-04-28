@@ -36,10 +36,10 @@ export class EventBindingComponent implements OnInit {
     console.log('button', event);
   }
 
-  updateFirstname(event: KeyboardEvent): void {
+  updateFirstname(event: Event): void {
     const inputVal = (event.target as HTMLInputElement).value;
-    if (event.keyCode === 13) {
-      this.firstName = inputVal;
-    }
+    // console.log((event.target as HTMLInputElement).value);
+    this.firstName = inputVal;
+
   }
 }
