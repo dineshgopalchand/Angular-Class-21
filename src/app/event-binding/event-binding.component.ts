@@ -10,6 +10,8 @@ export class EventBindingComponent implements OnInit {
 
   title = 'Show Course - Event Binding';
   showCourse = false;
+
+  firstName = '';
   constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
@@ -34,5 +36,10 @@ export class EventBindingComponent implements OnInit {
     console.log('button', event);
   }
 
-
+  updateFirstname(event: KeyboardEvent): void {
+    const inputVal = (event.target as HTMLInputElement).value;
+    if (event.keyCode === 13) {
+      this.firstName = inputVal;
+    }
+  }
 }
