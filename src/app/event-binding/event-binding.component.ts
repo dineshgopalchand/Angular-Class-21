@@ -10,6 +10,8 @@ export class EventBindingComponent implements OnInit {
 
   title = 'Show Course - Event Binding';
   showCourse = false;
+
+  firstName = '';
   constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
@@ -34,5 +36,19 @@ export class EventBindingComponent implements OnInit {
     console.log('button', event);
   }
 
+  // updateFirstname(event: Event): void {
+  //   const inputVal = (event.target as HTMLInputElement).value;
+  //   // console.log((event.target as HTMLInputElement).value);
+  //   this.firstName = inputVal;
+  //   console.log(event);
 
+  // }
+  updateFirstname(inputField: HTMLInputElement): void {
+    this.firstName = inputField.value;
+    console.log(inputField.value);
+
+  }
+  getNameVal(firstName: HTMLInputElement, lastName: HTMLInputElement): void {
+    console.log(firstName.value + ' ' + lastName.value);
+  }
 }

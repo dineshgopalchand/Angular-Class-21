@@ -12,3 +12,10 @@
         <button (click)="buttonClick($event)">Click me</button>
     </div>
 </div>
+<div class="form-group m-4">
+    <input type="text" class="form-control" name="firstname" (keyup)="updateFirstname(firstName)" #firstName>
+</div>
+<div class="form-group m-4">
+    <input type="text" class="form-control" name="lastname" (keyup)="updateFirstname(lastName)" #lastName>
+</div>
+<button (click)="getNameVal(firstName,lastName)">GET NAME</button> {{firstName}}
