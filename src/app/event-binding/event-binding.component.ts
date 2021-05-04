@@ -12,9 +12,12 @@ export class EventBindingComponent implements OnInit {
   showCourse = false;
 
   firstName = '';
+  fullName = '';
+  filteredCourseList: string[] = [];
   constructor(private coursesService: CoursesService) { }
 
   ngOnInit(): void {
+    this.filteredCourseList = this.coursesService.courseLists;
   }
 
   get courseList(): string[] {
@@ -49,6 +52,13 @@ export class EventBindingComponent implements OnInit {
 
   }
   getNameVal(firstName: HTMLInputElement, lastName: HTMLInputElement): void {
-    console.log(firstName.value + ' ' + lastName.value);
+    this.fullName = firstName.value + ' ' + lastName.value;
+  }
+  filterCourse(searchField: HTMLInputElement): void {
+    console.log(searchField.value);
+    const val = searchField.value.toLowerCase();
+    this.filteredCourseList = this.coursesService.courseLists.filter(item => {
+      return item.toLowerCase().indexOf(val) !== -1 ? true : false;
+    });
   }
 }
