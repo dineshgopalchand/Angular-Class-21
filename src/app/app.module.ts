@@ -9,6 +9,8 @@ import { CourseService } from './services/course.service';
 import { CoursesService } from './services/courses.service';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
     CourseComponent,
     CoursesComponent,
     DataBindingComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    TwoWayBindingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     CoursesService,
