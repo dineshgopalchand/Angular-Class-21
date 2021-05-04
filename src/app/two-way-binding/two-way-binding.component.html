@@ -1,0 +1,9 @@
+<h3>Two Way Binding Example</h3>
+<hr>
+<div class="form-group">
+    <label for="firstname">Enter Firstname</label>
+    <!-- <input type="text" class="form-control" name="firstname" #fname placeholder="Enter First Name" [value]="firstName" (keyup)="updateFirstName(fname)"> -->
+    <input type="text" class="form-control" name="firstname" #fname placeholder="Enter First Name" [(ngModel)]="firstName">
+    <button class="btn btn-primary" (click)="changeUpperCase()">Change to uppercase</button>
+</div>
+{{firstName}}
