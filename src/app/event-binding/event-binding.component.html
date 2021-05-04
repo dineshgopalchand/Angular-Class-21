@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col">
+        <h3>{{title}} <small><button class="btn btn-secondary" (click)="showCourseList($event)">{{showCourse?'Hide Course List':'Show Course List'}}</button></small></h3>
+        <hr>
+        <ul class="list-group" *ngIf="showCourse">
+            <li class="list-group-item" *ngFor="let course of courseList">{{course}}</li>
+        </ul>
+        <p *ngIf="!showCourse">Course List is not showing</p>
+
+        <div class="parent-element" (click)="parentDiv($event)">
+            Parent Element
+            <div class="child-element" (click)="childDiv($event)">
+                button:::::
+                <button (click)="buttonClick($event)">Click me</button>
+            </div>
+        </div>
+        <div class="form-group m-4">
+            <input type="text" class="form-control" name="firstname" (keyup)="updateFirstname(firstName)" #firstName>
+        </div>
+        <div class="form-group m-4">
+            <input type="text" class="form-control" name="lastname" (keyup)="updateFirstname(lastName)" #lastName>
+        </div>
+        <button (click)="getNameVal(firstName,lastName)">GET NAME</button> {{fullName}}
+    </div>
+    <div class="col">
+        <h3>Event Filter Example</h3>
+        <hr>
+        <div class="form-group">
+            <input type="text" class="form-control" #searchField name="search" placeholder="search course" (keyup.enter)="filterCourse(searchField)">
+            <ul class="list-group" *ngIf="filteredCourseList.length>0">
+                <li class="list-group-item" *ngFor="let course of filteredCourseList">{{course}}</li>
+            </ul>
+            <p *ngIf="filteredCourseList.length==0">No Course Found</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+// table,
+// tr,
+// td {
+//     border: 1px solid #2b2b2b;
+// }
+// table {
+//     border-collapse: collapse;
+// }
+table {
+    border-collapse: collapse;
+    &,
+    tr,
+    td {
+        border: 1px solid #2b2b2b;
+    }
+}
+
+h2,
+h3 {
+    color: red;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: green;
+}

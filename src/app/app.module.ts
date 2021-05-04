@@ -7,16 +7,26 @@ import { CourseComponent } from './course.component';
 import { CoursesComponent } from './courses/courses.component';
 import { CourseService } from './services/course.service';
 import { CoursesService } from './services/courses.service';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+import { EventBindingComponent } from './event-binding/event-binding.component';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { FormsModule } from '@angular/forms';
+import { PipeModule } from './pipe/pipe.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    CoursesComponent
+    CoursesComponent,
+    DataBindingComponent,
+    EventBindingComponent,
+    TwoWayBindingComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    PipeModule
   ],
   providers: [
     CoursesService,
