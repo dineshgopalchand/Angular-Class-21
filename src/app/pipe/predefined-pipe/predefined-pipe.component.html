@@ -10,18 +10,31 @@
 <div>{{studentDetails.name | uppercase}}</div>
 <div>{{studentDetails.name | lowercase}}</div>
 <div>{{studentDetails.name | titlecase}}</div> -->
-<div>{{studentDetails.price }}</div>
+<!-- <div>{{studentDetails.price }}</div>
 <div>{{studentDetails.price | currency}}</div>
 <div>{{studentDetails.price | currency:'USD'}}</div>
 <div>{{studentDetails.price | currency:'INR'}}</div>
 <div>{{studentDetails.price | currency:'AUD'}}</div>
 <div>{{studentDetails.price | currency:'DNS$'}}</div>
 <div>{{studentDetails.price | currency:'EUR'}}</div>
-<div>{{studentDetails.price | currency:'BTN'}}</div>
+<div>{{studentDetails.price | currency:'BTN'}}</div> -->
 
 
-<div>{{studentDetails.rating}}</div>
-<div>{{studentDetails.releaseDate}}</div>
+<!-- <div>{{studentDetails.rating }}</div>
+<div>{{studentDetails.rating | number}}</div>
+<div>{{studentDetails.rating | number:'5.6-6'}}</div>
+<div>{{studentDetails.rating | number:'2.1-1'}}</div>
+<div>{{studentDetails.rating | number:'1.1-1'}}</div>
+<div>{{studentDetails.rating | number:'1.1-1' | currency:'INR'}}</div> -->
+<div>{{studentDetails.releaseDate }}</div>
+<div>{{studentDetails.releaseDate | date}}</div>
+<div>{{studentDetails.releaseDate | date:'medium'}}</div>
+<div>{{studentDetails.releaseDate | date:'shortDate'}}</div>
+<div>{{studentDetails.releaseDate | date:'longDate'}}</div>
+<div>{{studentDetails.releaseDate | date:'fullDate'}}</div>
+<div>{{studentDetails.releaseDate | date:'h:mm:ss a zzzz'}}</div>
+<div>{{studentDetails.releaseDate | date:'yyyy-MM-d'}}</div>
+<div>{{studentDetails.releaseDate | date:dateFormat}}</div>
 <div>{{studentDetails.studentsinBatch}}</div>
 <div>{{studentDetails.title}}</div>
 <div>{{studentDetails.title}}</div>
