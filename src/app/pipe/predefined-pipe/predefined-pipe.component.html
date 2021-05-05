@@ -10,17 +10,22 @@
 <div>{{studentDetails.name | uppercase}}</div>
 <div>{{studentDetails.name | lowercase}}</div>
 <div>{{studentDetails.name | titlecase}}</div> -->
-<div>{{studentDetails.price }}</div>
+<!-- <div>{{studentDetails.price }}</div>
 <div>{{studentDetails.price | currency}}</div>
 <div>{{studentDetails.price | currency:'USD'}}</div>
 <div>{{studentDetails.price | currency:'INR'}}</div>
 <div>{{studentDetails.price | currency:'AUD'}}</div>
 <div>{{studentDetails.price | currency:'DNS$'}}</div>
 <div>{{studentDetails.price | currency:'EUR'}}</div>
-<div>{{studentDetails.price | currency:'BTN'}}</div>
+<div>{{studentDetails.price | currency:'BTN'}}</div> -->
 
 
-<div>{{studentDetails.rating}}</div>
+<div>{{studentDetails.rating }}</div>
+<div>{{studentDetails.rating | number}}</div>
+<div>{{studentDetails.rating | number:'5.6-6'}}</div>
+<div>{{studentDetails.rating | number:'2.1-1'}}</div>
+<div>{{studentDetails.rating | number:'1.1-1'}}</div>
+<div>{{studentDetails.rating | number:'1.1-1' | currency:'INR'}}</div>
 <div>{{studentDetails.releaseDate}}</div>
 <div>{{studentDetails.studentsinBatch}}</div>
 <div>{{studentDetails.title}}</div>
