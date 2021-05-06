@@ -1,0 +1,5 @@
+<h4>Summary Pipe Demo</h4>
+<hr>
+<div>
+    {{details | summary:summaryArgs}}<button class="btn btn-link" (click)="summaryArgs.expand=!summaryArgs.expand">{{summaryArgs.expand?'Show less':'Show more'}}</button>
+</div>

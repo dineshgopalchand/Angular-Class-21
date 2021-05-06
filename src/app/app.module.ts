@@ -12,6 +12,8 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from './pipe/pipe.module';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { PipeModule } from './pipe/pipe.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PipeModule
+    PipeModule,
+    SharedModule
   ],
   providers: [
     CoursesService,
