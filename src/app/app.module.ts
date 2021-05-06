@@ -12,6 +12,10 @@ import { EventBindingComponent } from './event-binding/event-binding.component';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from './pipe/pipe.module';
+import { SharedModule } from './shared/shared.module';
+import { ResuableComponent } from './resuable/resuable.component';
+import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
+
 
 @NgModule({
   declarations: [
@@ -20,13 +24,16 @@ import { PipeModule } from './pipe/pipe.module';
     CoursesComponent,
     DataBindingComponent,
     EventBindingComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    ResuableComponent,
+    ResuableDemoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    PipeModule
+    PipeModule,
+    SharedModule
   ],
   providers: [
     CoursesService,
