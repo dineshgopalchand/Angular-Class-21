@@ -13,6 +13,8 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { FormsModule } from '@angular/forms';
 import { PipeModule } from './pipe/pipe.module';
 import { SharedModule } from './shared/shared.module';
+import { ResuableComponent } from './resuable/resuable.component';
+import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { SharedModule } from './shared/shared.module';
     CoursesComponent,
     DataBindingComponent,
     EventBindingComponent,
-    TwoWayBindingComponent
+    TwoWayBindingComponent,
+    ResuableComponent,
+    ResuableDemoComponent
   ],
   imports: [
     BrowserModule,
