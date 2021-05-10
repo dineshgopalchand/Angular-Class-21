@@ -15,6 +15,7 @@ import { PipeModule } from './pipe/pipe.module';
 import { SharedModule } from './shared/shared.module';
 import { ResuableComponent } from './resuable/resuable.component';
 import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
+import { LikeComponent } from './like/like.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
     EventBindingComponent,
     TwoWayBindingComponent,
     ResuableComponent,
-    ResuableDemoComponent
+    ResuableDemoComponent,
+    LikeComponent
   ],
   imports: [
     BrowserModule,
