@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { LikeValue } from '../like/like.component';
 
 @Component({
   selector: 'app-resuable',
@@ -7,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ResuableComponent implements OnInit {
   @Input() imageDetail: ImageDetail = {} as ImageDetail;
+  @Output() updateImgDetails = new EventEmitter();
   // @Input() img = '';
 
   imageUrl = '';
@@ -32,10 +34,19 @@ export class ResuableComponent implements OnInit {
   get count(): number {
     return this.imageDetail.likecount || 0;
   }
+  updateLike(likeVal: LikeValue): void {
+    console.log(likeVal);
+    const imgDetails = this.imageDetail;
+    imgDetails.like = likeVal.like;
+    imgDetails.likecount = likeVal.count;
+    console.log(imgDetails);
+    this.updateImgDetails.emit(imgDetails);
+  }
 
 }
 
 export interface ImageDetail {
+  id: number;
   name: string;
   url: string;
   details: string;

@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-like',
@@ -9,6 +10,8 @@ export class LikeComponent implements OnInit {
 
   @Input() isLiked = false;
   @Input() count = 0;
+
+  @Output() likeUpdate = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
@@ -20,6 +23,18 @@ export class LikeComponent implements OnInit {
     } else {
       this.count--;
     }
+    const value: LikeValue = {
+      like: this.isLiked,
+      count: this.count
+    };
+    this.likeUpdate.emit(
+      value
+    );
   }
 
+}
+
+export interface LikeValue {
+  like: boolean;
+  count: number;
 }

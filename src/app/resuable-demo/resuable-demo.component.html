@@ -6,7 +6,7 @@
 
 <div class="row m-2">
     <div class="col-3 mt-2" *ngFor="let image of imageList">
-        <app-resuable [imageDetail]="image"></app-resuable>
+        <app-resuable [imageDetail]="image" (updateImgDetails)=updateImageDetails($event)></app-resuable>
     </div>
 
 </div>
