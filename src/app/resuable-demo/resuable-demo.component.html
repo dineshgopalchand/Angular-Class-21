@@ -1,5 +1,12 @@
 <!-- <app-resuable *ngFor="let image of imageList" [imageDetail]="image"></app-resuable> -->
 <!-- <app-resuable [imageDetail]="imageList[0]" [img]='"asdfads"'></app-resuable> -->
-<app-resuable [imageDetail]="imageList[2]"></app-resuable>
+<!-- <app-resuable [imageDetail]="imageList[2]"></app-resuable>
 <app-resuable [imageDetail]="imageList[4]"></app-resuable>
-<app-resuable [imageDetail]="imageList[1]"></app-resuable>
+<app-resuable [imageDetail]="imageList[1]"></app-resuable> -->
+
+<div class="row m-2">
+    <div class="col-3 mt-2" *ngFor="let image of imageList">
+        <app-resuable [imageDetail]="image"></app-resuable>
+    </div>
+
+</div>

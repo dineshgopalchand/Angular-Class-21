@@ -1,0 +1,3 @@
+<!-- <button class="btn" [class.btn-primary]="isLiked" [class.btn-secondry]="!isLiked" (click)="updateLikeStatus()">Like</button> -->
+<i class="fa fa-thumbs-up" [class.liked]="isLiked" [class.unliked]="!isLiked" (click)="updateLikeStatus()"></i>
+<span class="ml-4">{{count}}</span>

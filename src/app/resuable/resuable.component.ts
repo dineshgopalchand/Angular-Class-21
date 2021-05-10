@@ -10,16 +10,27 @@ export class ResuableComponent implements OnInit {
   // @Input() img = '';
 
   imageUrl = '';
+  title = '';
+  details = '';
+
   constructor() { }
 
   ngOnInit(): void {
     console.log(this.imageDetail);
     this.imageUrl = this.imageDetail.url;
+    this.title = this.imageDetail.name;
+    this.details = this.imageDetail.details;
     // console.log(this.img);
 
   }
   onClick(): void {
     console.log('button was Clicked');
+  }
+  get isLike(): boolean {
+    return this.imageDetail.like || false;
+  }
+  get count(): number {
+    return this.imageDetail.likecount || 0;
   }
 
 }
@@ -28,4 +39,6 @@ export interface ImageDetail {
   name: string;
   url: string;
   details: string;
+  like?: boolean;
+  likecount?: number;
 }
