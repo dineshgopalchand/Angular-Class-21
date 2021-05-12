@@ -1,12 +1,32 @@
-<h2 style="text-align: center;">{{title}}</h2>
-<hr>
+<!-- <h2 style="text-align: center;">{{title}}</h2>
+<hr> -->
 <!-- <app-course></app-course>
 <app-courses></app-courses> -->
 <!-- <app-data-binding></app-data-binding> -->
 <!-- <app-event-binding></app-event-binding> -->
 <!-- <app-two-way-binding></app-two-way-binding> -->
 <!-- <app-pipe></app-pipe> -->
-<app-resuable-demo></app-resuable-demo>
+<!-- <app-resuable-demo></app-resuable-demo> -->
 <!-- <app-like></app-like> -->
+<theme-default>
+    <!-- <div class="header">
+        <app-header></app-header>
+    </div>
+    <div class="footer">
+        <app-footer></app-footer>
+    </div>
+    <div class="main-content">
+        <app-resuable-demo></app-resuable-demo>
+    </div> -->
+    <ng-container class="header">
+        <app-header></app-header>
+    </ng-container>
+    <ng-container class="footer">
+        <app-footer></app-footer>
+    </ng-container>
+    <ng-container class="main-content">
+        <app-resuable-demo></app-resuable-demo>
+    </ng-container>
+</theme-default>
 
 <router-outlet></router-outlet>

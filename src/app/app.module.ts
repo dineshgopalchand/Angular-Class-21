@@ -16,6 +16,7 @@ import { SharedModule } from './shared/shared.module';
 import { ResuableComponent } from './resuable/resuable.component';
 import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
 import { LikeComponent } from './like/like.component';
+import { ThemesModule } from './themes/themes.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { LikeComponent } from './like/like.component';
     AppRoutingModule,
     FormsModule,
     PipeModule,
-    SharedModule
+    SharedModule,
+    ThemesModule
   ],
   providers: [
     CoursesService,
