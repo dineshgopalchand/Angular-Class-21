@@ -1,3 +1,15 @@
-<p>resuable works!</p>
-<img [src]="imageUrl" />
-<button (click)="onClick()">Button</button>
+<!-- <p>resuable works!</p> -->
+<div class="card">
+    <img class="card-img-top" [src]="imageUrl" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+        <p class="card-text">{{details}}</p>
+        <app-like [isLiked]="isLike" [count]="count" (likeUpdate)="updateLike($event)"></app-like>
+    </div>
+</div>
+<!-- <div class="img">
+    <img [src]="imageUrl" />
+</div> -->
+<!-- <button (click)="onClick()">Button</button> -->
+<!-- <br>
+<app-like></app-like> -->

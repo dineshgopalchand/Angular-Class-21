@@ -1,0 +1,20 @@
+.fa {
+    font-size: 30px;
+    cursor: pointer;
+    &.liked {
+        color: blue;
+    }
+    &.unliked {
+        color: gray;
+    }
+}
+
+// .fa {
+//     font-size: 30px;
+// }
+// .fa.liked {
+//     color: blue;
+// }
+// .fa.unliked {
+//     color: gray;
+// }
