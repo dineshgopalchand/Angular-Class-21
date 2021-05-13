@@ -1,10 +1,18 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 
 @Component({
   selector: 'app-like',
+  // template: '<i class="fa fa-thumbs-up" [class.liked]="isLiked" [class.unliked]="!isLiked" (click)="updateLikeStatus()"></i>' +
+  //   '<span class="ml-4">{{count}}</span>',
+  // template: '<i class="fa fa-thumbs-up" [class.liked]="isLiked" [class.unliked]="!isLiked" (click)="updateLikeStatus()"></i>\
+  //   <span class="ml-4">{{count}}</span>',
+  // template: `<i class="fa fa-thumbs-up" [class.liked]="isLiked" [class.unliked]="!isLiked" (click)="updateLikeStatus()"></i>
+  //   <span class="ml-4">{{count}}</span>`,
   templateUrl: './like.component.html',
-  styleUrls: ['./like.component.scss']
+  styleUrls: ['./like.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
+  // styles: ['span{color:red}'],
 })
 export class LikeComponent implements OnInit {
 
