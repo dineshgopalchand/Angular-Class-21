@@ -1,0 +1,21 @@
+<div class="main-content">
+    <div class="row">
+        <div class="col-2">
+            <ul class="list-group">
+                <li class="list-group-item list-link " (click)="updateMenu('course')" [class.active]="menuSelected=='course'">Course</li>
+                <li class="list-group-item list-link" (click)="updateMenu('resuable demo')" [class.active]="menuSelected=='resuable demo'">Resuable Demo</li>
+                <li class="list-group-item list-link" (click)="updateMenu('two way binding')" [class.active]="menuSelected=='two way binding'">Two way binding</li>
+                <li class="list-group-item list-link" (click)="updateMenu('map')" [class.active]="menuSelected=='map'">Map</li>
+            </ul>
+        </div>
+        <div class="col">
+            <h3>Dashboard <small> >> </small><small>{{menuSelected | titlecase}}</small></h3>
+            <hr>
+            <app-courses *ngIf="menuSelected=='course'"></app-courses>
+            <app-two-way-binding *ngIf="menuSelected=='two way binding'"></app-two-way-binding>
+            <app-resuable-demo *ngIf="menuSelected=='resuable demo'"></app-resuable-demo>
+            <app-location-map *ngIf="menuSelected=='map'"></app-location-map>
+        </div>
+    </div>
+
+</div>
