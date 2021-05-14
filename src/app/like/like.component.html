@@ -4,4 +4,9 @@
     'liked':isLiked,
     'unliked':!isLiked
 }" (click)="updateLikeStatus()"></i>
-<span class="ml-4" [style.font-weight]="isLiked?'bold':'normal'" [style.color]="isLiked?'black':'gray'" [style.font-style]="isLiked?'normal':'italic'">{{count}}</span>
+<!-- <span class="ml-4" [style.font-weight]="isLiked?'bold':'normal'" [style.color]="isLiked?'black':'gray'" [style.font-style]="isLiked?'normal':'italic'">{{count}}</span> -->
+<span class="ml-4" [ngStyle]="{
+    'font-weight':isLiked?'bold':'normal',
+    'color':isLiked?'black':'gray',
+    'fontStyle':isLiked?'normal':'italic'
+}">{{count}}</span>
