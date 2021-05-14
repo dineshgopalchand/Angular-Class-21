@@ -9,12 +9,31 @@
             </ul>
         </div>
         <div class="col">
-            <h3>Dashboard <small> >> </small><small>{{menuSelected | titlecase}}</small></h3>
+            <h3>Dashboard <small> >> </small><small><i>{{menuSelected | titlecase}}</i></small></h3>
             <hr>
-            <app-courses *ngIf="menuSelected=='course'"></app-courses>
+            <!-- <app-courses *ngIf="menuSelected=='course'"></app-courses>
             <app-two-way-binding *ngIf="menuSelected=='two way binding'"></app-two-way-binding>
             <app-resuable-demo *ngIf="menuSelected=='resuable demo'"></app-resuable-demo>
-            <app-location-map *ngIf="menuSelected=='map'"></app-location-map>
+            <app-location-map *ngIf="menuSelected=='map'"></app-location-map> -->
+            <div [ngSwitch]="menuSelected">
+                <div *ngSwitchCase="'course'">
+                    <app-courses></app-courses>
+                </div>
+                <div *ngSwitchCase="'two way binding'">
+                    <app-two-way-binding></app-two-way-binding>
+                </div>
+                <div *ngSwitchCase="'resuable demo'">
+                    <app-resuable-demo></app-resuable-demo>
+                </div>
+                <div *ngSwitchCase="'map'">
+                    <app-location-map></app-location-map>
+                </div>
+                <div *ngSwitchDefault>Invalid Menu Selection</div>
+            </div>
+            <!-- <app-courses *ngIf="menuSelected=='course'"></app-courses>
+            <app-two-way-binding *ngIf="menuSelected=='two way binding'"></app-two-way-binding>
+            <app-resuable-demo *ngIf="menuSelected=='resuable demo'"></app-resuable-demo>
+            <app-location-map *ngIf="menuSelected=='map'"></app-location-map> -->
         </div>
     </div>
 
