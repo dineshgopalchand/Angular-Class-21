@@ -9,6 +9,7 @@ import { CoursesService } from '../services/courses.service';
 export class CoursesComponent implements OnInit {
   courseTitle = 'Courses List';
   courseList: string[] = [];
+
   constructor(public courseService: CoursesService) {
     this.courseList = this.courseService.courseLists;
   }
@@ -24,6 +25,12 @@ export class CoursesComponent implements OnInit {
   }
   removeCourse(course: string): void {
     this.courseService.removeCourse(course);
+  }
+  // getIndex(course: string): number {
+  //   return this.courseList.indexOf(course);
+  // }
+  addCourse(): void {
+    this.courseList.push('course' + this.courseList.length);
   }
 
 }

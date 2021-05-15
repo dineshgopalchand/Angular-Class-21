@@ -17,6 +17,9 @@ import { ResuableComponent } from './resuable/resuable.component';
 import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
 import { LikeComponent } from './like/like.component';
 import { ThemesModule } from './themes/themes.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { LocationMapComponent } from './location-map/location-map.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { ThemesModule } from './themes/themes.module';
     TwoWayBindingComponent,
     ResuableComponent,
     ResuableDemoComponent,
-    LikeComponent
+    LikeComponent,
+    DashboardComponent,
+    DashboardMenuComponent,
+    LocationMapComponent
   ],
   imports: [
     BrowserModule,
