@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
+import { ListingDirective } from './directives/listing.directive';
 
 
 
@@ -10,7 +11,8 @@ import { FooterComponent } from './component/footer/footer.component';
   declarations: [
     SummaryPipe,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ListingDirective
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { FooterComponent } from './component/footer/footer.component';
   exports: [
     SummaryPipe,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    ListingDirective
   ]
 })
 export class SharedModule { }
