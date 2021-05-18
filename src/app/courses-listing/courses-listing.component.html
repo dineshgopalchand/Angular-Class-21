@@ -1,1 +1,4 @@
+<div class="form-group">
+    <input type="text" class="form-control" placeholder="Input Course Name" name="coursename" [appNameValidation] [textCase]="'titlecase'" (submitField)="addNewCourse($event)">
+</div>
 <div [appListing]="courseList" [titleVal]="titleVal" [striped]="true" [deleteOption]="true" (delete)="onDelete($event)"></div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
+import { JSONFormat } from '../shared/_help/jsonformat';
 
 @Component({
   selector: 'app-courses-listing',
@@ -20,6 +21,10 @@ export class CoursesListingComponent implements OnInit {
     console.log(value);
     this.courseService.removeCourse(value);
     console.log(this.courseService.courseLists);
+  }
+  addNewCourse(newCourse: JSONFormat): void {
+    // console.log(newCourse);
+    this.courseService.addCourse(newCourse.value);
   }
 
 }

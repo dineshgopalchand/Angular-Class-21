@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LowerCasePipe, TitleCasePipe, UpperCasePipe } from '@angular/common';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ListingDirective } from './directives/listing.directive';
+import { NameValidationDirective } from './directives/name-validation.directive';
 
 
 
@@ -12,16 +13,23 @@ import { ListingDirective } from './directives/listing.directive';
     SummaryPipe,
     HeaderComponent,
     FooterComponent,
-    ListingDirective
+    ListingDirective,
+    NameValidationDirective
   ],
   imports: [
     CommonModule
+  ],
+  providers: [
+    TitleCasePipe,
+    UpperCasePipe,
+    LowerCasePipe
   ],
   exports: [
     SummaryPipe,
     HeaderComponent,
     FooterComponent,
-    ListingDirective
+    ListingDirective,
+    NameValidationDirective
   ]
 })
 export class SharedModule { }
