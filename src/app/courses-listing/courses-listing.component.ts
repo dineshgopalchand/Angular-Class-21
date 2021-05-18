@@ -16,5 +16,10 @@ export class CoursesListingComponent implements OnInit {
   get courseList(): string[] {
     return this.courseService.courseLists;
   }
+  onDelete(value: string): void {
+    console.log(value);
+    this.courseService.removeCourse(value);
+    console.log(this.courseService.courseLists);
+  }
 
 }
