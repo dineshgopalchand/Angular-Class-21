@@ -22,4 +22,7 @@ export class CoursesService {
     const indexVal = this.courseLists.indexOf(course);
     this.courseLists.splice(indexVal, 1);
   }
+  addCourse(name: string): void {
+    this.courseList.push(name);
+  }
 }

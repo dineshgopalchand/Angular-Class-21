@@ -20,6 +20,7 @@ import { ThemesModule } from './themes/themes.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
 import { LocationMapComponent } from './location-map/location-map.component';
+import { CoursesListingComponent } from './courses-listing/courses-listing.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { LocationMapComponent } from './location-map/location-map.component';
     LikeComponent,
     DashboardComponent,
     DashboardMenuComponent,
-    LocationMapComponent
+    LocationMapComponent,
+    CoursesListingComponent
   ],
   imports: [
     BrowserModule,
