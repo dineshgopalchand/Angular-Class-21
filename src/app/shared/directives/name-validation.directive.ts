@@ -29,6 +29,7 @@ export class NameValidationDirective implements OnInit {
   ngOnInit(): void {
 
     // this.parentNode = this.currentElement.parentNode as HTMLElement;
+    this.renderer.setStyle(this.parentNode, 'position', 'relative');
 
 
   }
@@ -49,10 +50,11 @@ export class NameValidationDirective implements OnInit {
       if (this.textCase === 'titlecase') {
         // this.inputVal = this.inputVal.toUpperCase();
         this.inputVal = this.titleCase.transform(this.inputVal);
-      } else {
-        // this.inputVal = this.inputVal.toLowerCase();
-        this.inputVal = this.lowerCase.transform(this.inputVal);
-      }
+      } else
+        if (this.textCase === 'lowercase') {
+          // this.inputVal = this.inputVal.toLowerCase();
+          this.inputVal = this.lowerCase.transform(this.inputVal);
+        }
     if ((event as KeyboardEvent).keyCode === 13 && this.inputVal !== '') {
       this.returnUpdatedValue();
     }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursesService } from '../services/courses.service';
-import { JSONFormat } from '../shared/_help/jsonformat';
+import { InputSubmitField } from '../shared/directives/name-validation.directive';
 
 @Component({
   selector: 'app-courses-listing',
@@ -22,7 +22,7 @@ export class CoursesListingComponent implements OnInit {
     this.courseService.removeCourse(value);
     console.log(this.courseService.courseLists);
   }
-  addNewCourse(newCourse: JSONFormat): void {
+  addNewCourse(newCourse: InputSubmitField): void {
     // console.log(newCourse);
     this.courseService.addCourse(newCourse.value);
   }
