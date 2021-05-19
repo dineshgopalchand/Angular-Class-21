@@ -1,0 +1,33 @@
+<h3>{{titleVal}}</h3>
+<hr>
+<div class="contact-form">
+    <form action="">
+        <div class="form-group">
+            <label for="firstname">Enter First name</label>
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" #firstName="ngModel" ngModel id="firstname" (change)="firstNameValue(firstName)" required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
+        </div>
+        <div class="alert alert-danger" *ngIf="firstName.errors && firstName.touched">
+            <div *ngIf="firstName.errors.required">First name is required</div>
+            <div *ngIf="firstName.errors.minlength">Minimum Length should be {{firstName.errors.minlength.requiredLength}}</div>
+            <div *ngIf="firstName.errors.pattern">First name is not valid</div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Enter Last name</label>
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname" #lastName ngModel="lastName">
+        </div>
+        <div class="form-group">
+            <label for="email">Enter Email ID</label>
+            <input type="text" class="form-control" placeholder="Email ID" name="email" id="email" #emailID ngModel="emailID">
+        </div>
+        <div class="form-group">
+            <label for="subject">Enter Subject</label>
+            <input type="text" class="form-control" placeholder="Subject" name="subject" id="subject" #subject ngModel="subject">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary form-control">
+                Submit
+            </button>
+        </div>
+    </form>
+</div>
