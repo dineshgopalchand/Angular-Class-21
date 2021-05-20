@@ -21,6 +21,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
 import { LocationMapComponent } from './location-map/location-map.component';
 import { CoursesListingComponent } from './courses-listing/courses-listing.component';
+import { CustomFormsModule } from './forms/custom-forms.module';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { CoursesListingComponent } from './courses-listing/courses-listing.compo
     FormsModule,
     PipeModule,
     SharedModule,
-    ThemesModule
+    ThemesModule,
+    CustomFormsModule
   ],
   providers: [
     CoursesService,
