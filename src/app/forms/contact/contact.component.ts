@@ -9,6 +9,28 @@ import { NgForm, NgModel } from '@angular/forms';
 export class ContactComponent implements OnInit {
 
   titleVal = 'Contact Form';
+  contactMethods = [
+    {
+      id: 1,
+      name: 'Email'
+    },
+    {
+      id: 2,
+      name: 'Phone'
+    },
+    {
+      id: 3,
+      name: 'SMS'
+    },
+    {
+      id: 4,
+      name: 'Postal'
+    },
+    {
+      id: 5,
+      name: 'Fax'
+    }
+  ];
   constructor() { }
 
   ngOnInit(): void {
