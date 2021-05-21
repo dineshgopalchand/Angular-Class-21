@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgModel } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -15,6 +15,9 @@ export class ContactComponent implements OnInit {
   }
   firstNameValue(firstName: NgModel): void {
     console.log(firstName);
+  }
+  contactFormSubmit(contactForm: NgForm): void {
+    console.log(contactForm);
   }
 
 }

@@ -1,33 +1,56 @@
 <h3>{{titleVal}}</h3>
 <hr>
 <div class="contact-form">
-    <form action="">
+    <form #contactForm="ngForm" (ngSubmit)="contactFormSubmit(contactForm)">
         <div class="form-group">
             <label for="firstname">Enter First name</label>
             <input type="text" class="form-control" placeholder="First Name" name="firstname" #firstName="ngModel" ngModel id="firstname" (change)="firstNameValue(firstName)" required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
         </div>
         <div class="alert alert-danger" *ngIf="firstName.errors && firstName.touched">
             <div *ngIf="firstName.errors.required">First name is required</div>
-            <div *ngIf="firstName.errors.minlength">Minimum Length should be {{firstName.errors.minlength.requiredLength}}</div>
+            <div *ngIf="firstName.errors.minlength">Minimum length should be {{firstName.errors.minlength.requiredLength}}</div>
+            <div *ngIf="firstName.errors.maxlength">Maximum length allowed is {{firstName.errors.maxname.requiredLength}}</div>
             <div *ngIf="firstName.errors.pattern">First name is not valid</div>
         </div>
 
         <div class="form-group">
             <label for="lastname">Enter Last name</label>
-            <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname" #lastName ngModel="lastName">
+            <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname" #lastName="ngModel" ngModel required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
+            <div class="alert alert-danger" *ngIf="lastName.errors && lastName.touched">
+                <div *ngIf="lastName.errors.required">Last name is required</div>
+                <div *ngIf="lastName.errors.minlength">Minimum length should be {{lastName.errors.minlength.requiredLength}}</div>
+                <div *ngIf="lastName.errors.maxlength">Maximum length allowed is {{lastName.errors.maxname.requiredLength}}</div>
+                <div *ngIf="lastName.errors.pattern">Last name is not valid</div>
+            </div>
+
         </div>
         <div class="form-group">
             <label for="email">Enter Email ID</label>
-            <input type="text" class="form-control" placeholder="Email ID" name="email" id="email" #emailID ngModel="emailID">
+            <input type="email" class="form-control" placeholder="Email ID" name="email" id="email" #emailID="ngModel" ngModel required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$">
+            <div class="alert alert-danger" *ngIf="emailID.errors && emailID.touched">
+                <div *ngIf="emailID.errors.required">Email id is required</div>
+                <div *ngIf="emailID.errors.pattern">Email id is not valid</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Enter Telephone number</label>
+            <input type="tel" class="form-control" placeholder="Telephone Number" name="phone" id="phone" #pNumber="ngModel" ngModel required>
+            <div class="alert alert-danger" *ngIf="pNumber.errors && pNumber.touched">
+                <div *ngIf="pNumber.errors.required">Telephone number is required</div>
+            </div>
         </div>
         <div class="form-group">
             <label for="subject">Enter Subject</label>
-            <input type="text" class="form-control" placeholder="Subject" name="subject" id="subject" #subject ngModel="subject">
+            <input type="text" class="form-control" placeholder="Subject" name="subject" id="subject" #subject="ngModel" ngModel required>
+            <div class="alert alert-danger" *ngIf="subject.errors && subject.touched">
+                <div *ngIf="subject.errors.required">Subject is required</div>
+            </div>
         </div>
         <div class="form-group">
-            <button class="btn btn-primary form-control">
+            <button class="btn btn-primary form-control" [disabled]="contactForm.invalid">
                 Submit
             </button>
         </div>
+        <!-- {{contactForm.invalid}} <br>{{contactForm.value |json}} -->
     </form>
 </div>
