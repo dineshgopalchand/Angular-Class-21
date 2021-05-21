@@ -72,6 +72,14 @@
 
             </select>
         </div>
+        <div class="radio" *ngFor="let contactOption of contactMethods;index as i">
+            <label for="contactOption_0{{i}}">
+                <!-- <input ngModel type="radio" name="contactMethodradio" [value]="contactOption.id" id="contactOption_0{{i}}" > -->
+                <input ngModel type="radio" name="contactMethodradio" [value]="contactOption" id="contactOption_0{{i}}" >
+              {{contactOption.name}}
+            </label>
+        </div>
+
         <div class="form-group">
             <button class="btn btn-primary form-control" [disabled]="contactForm.invalid">
                 Submit
