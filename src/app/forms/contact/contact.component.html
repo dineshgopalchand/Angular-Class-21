@@ -2,27 +2,32 @@
 <hr>
 <div class="contact-form">
     <form #contactForm="ngForm" (ngSubmit)="contactFormSubmit(contactForm)">
-        <div class="form-group">
-            <label for="firstname">Enter First name</label>
-            <input type="text" class="form-control" placeholder="First Name" name="firstname" #firstName="ngModel" ngModel id="firstname" (change)="firstNameValue(firstName)" required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
-        </div>
-        <div class="alert alert-danger" *ngIf="firstName.errors && firstName.touched">
-            <div *ngIf="firstName.errors.required">First name is required</div>
-            <div *ngIf="firstName.errors.minlength">Minimum length should be {{firstName.errors.minlength.requiredLength}}</div>
-            <div *ngIf="firstName.errors.maxlength">Maximum length allowed is {{firstName.errors.maxname.requiredLength}}</div>
-            <div *ngIf="firstName.errors.pattern">First name is not valid</div>
-        </div>
-
-        <div class="form-group">
-            <label for="lastname">Enter Last name</label>
-            <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname" #lastName="ngModel" ngModel required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
-            <div class="alert alert-danger" *ngIf="lastName.errors && lastName.touched">
-                <div *ngIf="lastName.errors.required">Last name is required</div>
-                <div *ngIf="lastName.errors.minlength">Minimum length should be {{lastName.errors.minlength.requiredLength}}</div>
-                <div *ngIf="lastName.errors.maxlength">Maximum length allowed is {{lastName.errors.maxname.requiredLength}}</div>
-                <div *ngIf="lastName.errors.pattern">Last name is not valid</div>
+        <div class="form-modular-group" #nameGroup="ngModelGroup" ngModelGroup>
+            <!-- {{nameGroup.touched }} {{nameGroup.invalid }} -->
+            <div class="group-title">Name Group</div>
+            <div class="group-error" *ngIf="nameGroup.touched  && nameGroup.invalid">Please Check Name Group Field</div>
+            <div class="form-group">
+                <label for="firstname">Enter First name</label>
+                <input type="text" class="form-control" placeholder="First Name" name="firstname" #firstName="ngModel" ngModel id="firstname" (change)="firstNameValue(firstName)" required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
+            </div>
+            <div class="alert alert-danger" *ngIf="firstName.errors && firstName.touched">
+                <div *ngIf="firstName.errors.required">First name is required</div>
+                <div *ngIf="firstName.errors.minlength">Minimum length should be {{firstName.errors.minlength.requiredLength}}</div>
+                <div *ngIf="firstName.errors.maxlength">Maximum length allowed is {{firstName.errors.maxname.requiredLength}}</div>
+                <div *ngIf="firstName.errors.pattern">First name is not valid</div>
             </div>
 
+            <div class="form-group">
+                <label for="lastname">Enter Last name</label>
+                <input type="text" class="form-control" placeholder="Last Name" name="lastname" id="lastname" #lastName="ngModel" ngModel required minlength="3" maxlength="20" pattern="^[A-Za-z]+$">
+                <div class="alert alert-danger" *ngIf="lastName.errors && lastName.touched">
+                    <div *ngIf="lastName.errors.required">Last name is required</div>
+                    <div *ngIf="lastName.errors.minlength">Minimum length should be {{lastName.errors.minlength.requiredLength}}</div>
+                    <div *ngIf="lastName.errors.maxlength">Maximum length allowed is {{lastName.errors.maxname.requiredLength}}</div>
+                    <div *ngIf="lastName.errors.pattern">Last name is not valid</div>
+                </div>
+
+            </div>
         </div>
         <div class="form-group">
             <label for="email">Enter Email ID</label>

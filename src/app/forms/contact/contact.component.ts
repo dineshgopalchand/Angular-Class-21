@@ -17,7 +17,7 @@ export class ContactComponent implements OnInit {
     console.log(firstName);
   }
   contactFormSubmit(contactForm: NgForm): void {
-    console.log(contactForm);
+    console.log(contactForm.value);
   }
 
 }
