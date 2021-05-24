@@ -11,19 +11,32 @@
         }
         .message-box {
             display: none;
-        }
-        &:hover .message-box {
-            display: block;
             position: absolute;
             z-index: 99;
             background: #595959;
             color: white;
             padding: 5px 10px;
-            right: -323px;
+            right: -325px;
             width: 320px;
             top: 0px;
             border-radius: 5px;
             border: 1px solid black;
+            &::before {
+                width: 0px;
+                height: 10px;
+                content: '';
+                z-index: 9999;
+                left: -19px;
+                position: absolute;
+                top: 11px;
+                border-right: 12px solid #595959;
+                border-top: 7px solid transparent;
+                border-bottom: 7px solid transparent;
+                border-left: 7px solid transparent;
+            }
+        }
+        &:hover .message-box {
+            display: block;
         }
     }
 }
