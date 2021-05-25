@@ -48,7 +48,7 @@ import { CustomFormsModule } from './forms/custom-forms.module';
     SharedModule,
     ThemesModule,
     CustomFormsModule
-  ],
+],
   providers: [
     CoursesService,
     CourseService
