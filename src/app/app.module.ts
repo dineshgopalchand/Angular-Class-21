@@ -16,6 +16,12 @@ import { SharedModule } from './shared/shared.module';
 import { ResuableComponent } from './resuable/resuable.component';
 import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
 import { LikeComponent } from './like/like.component';
+import { ThemesModule } from './themes/themes.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { LocationMapComponent } from './location-map/location-map.component';
+import { CoursesListingComponent } from './courses-listing/courses-listing.component';
+import { CustomFormsModule } from './forms/custom-forms.module';
 
 
 @NgModule({
@@ -28,15 +34,21 @@ import { LikeComponent } from './like/like.component';
     TwoWayBindingComponent,
     ResuableComponent,
     ResuableDemoComponent,
-    LikeComponent
+    LikeComponent,
+    DashboardComponent,
+    DashboardMenuComponent,
+    LocationMapComponent,
+    CoursesListingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     PipeModule,
-    SharedModule
-  ],
+    SharedModule,
+    ThemesModule,
+    CustomFormsModule
+],
   providers: [
     CoursesService,
     CourseService

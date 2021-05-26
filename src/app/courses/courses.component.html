@@ -1,11 +1,31 @@
 <!-- <h3>{{courseTitle}} - ({{getCourseCount()}})</h3> -->
-<h3 title="number of course is {{courseCount}}">{{courseTitle}} ({{courseCount}})</h3>
-<ul *ngIf="courseList.length>0">
+<h4 title="number of course is {{courseCount}}">{{courseTitle}} ({{courseCount}}) -- <button class="btn btn-primary" (click)="addCourse()">Add New Course</button></h4>
+
+<!-- <div *ngIf="courseList.length>0; then courseBlock else noCourseBlock"></div> -->
+<ng-container *ngIf="courseList.length>0; then courseBlock else noCourseBlock"></ng-container>
+<ng-template #courseBlock>
+
+    <ul class="list-group">
+        <!-- <li class="list-group-item" [class.list-group-item-secondary]="getIndex(course)%2==0" *ngFor="let course of courseList;">
+            <button class="mr-2 btn btn-danger" (click)="removeCourse(course)">Remove</button>{{course}}
+        </li> -->
+        <li class="list-group-item" *ngFor="let course of courseList;index as i;odd as o;even as e" [class.list-group-item-secondary]="e">
+            <!-- [class.list-group-item-secondary]="i%2==0" -->
+            {{i+1}}. <button class="mr-2 btn btn-danger" (click)="removeCourse(course)">Remove</button>{{course}}
+        </li>
+    </ul>
+</ng-template>
+
+<ng-template #noCourseBlock>
+    <p>
+        No courses available
+    </p>
+</ng-template>
+<!-- <ul [hidden]="courseList.length==0">
     <li *ngFor="let course of courseList ">
         {{course}} <button (click)="removeCourse(course)">Remove</button>
     </li>
 </ul>
-
-<p *ngIf="courseList.length==0">
+<p [hidden]="courseList.length!==0">
     No courses available
-</p>
+</p> -->

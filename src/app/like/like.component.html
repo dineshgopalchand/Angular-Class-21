@@ -1,3 +1,12 @@
 <!-- <button class="btn" [class.btn-primary]="isLiked" [class.btn-secondry]="!isLiked" (click)="updateLikeStatus()">Like</button> -->
-<i class="fa fa-thumbs-up" [class.liked]="isLiked" [class.unliked]="!isLiked" (click)="updateLikeStatus()"></i>
-<span class="ml-4">{{count}}</span>
+<!-- <i class="fa fa-thumbs-up" [class.liked]="isLiked" [class.unliked]="!isLiked" (click)="updateLikeStatus()"></i> -->
+<i class="fa fa-thumbs-up" [ngClass]="{
+    'liked':isLiked,
+    'unliked':!isLiked
+}" (click)="updateLikeStatus()"></i>
+<!-- <span class="ml-4" [style.font-weight]="isLiked?'bold':'normal'" [style.color]="isLiked?'black':'gray'" [style.font-style]="isLiked?'normal':'italic'">{{count}}</span> -->
+<span class="ml-4" [ngStyle]="{
+    'font-weight':isLiked?'bold':'normal',
+    'color':isLiked?'black':'gray',
+    'fontStyle':isLiked?'normal':'italic'
+}">{{count}}</span>

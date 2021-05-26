@@ -1,0 +1,33 @@
+.contact-form {
+    max-width: 800px;
+}
+
+.form-control.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.form-modular-group {
+    border: 1px solid gray;
+    position: relative;
+    padding: 5px 2px;
+    &.ng-invalid.ng-touched {
+        border: 1px solid red;
+        .group-error {
+            font-size: 0.7rem;
+            right: 20px;
+            position: absolute;
+            top: -9px;
+            background: white;
+            border: 1px solid red;
+            padding: 0px 3px;
+        }
+    }
+    .group-title {
+        position: absolute;
+        background: white;
+        font-size: 0.6rem;
+        top: -9px;
+        color: navy;
+        left: 10px;
+    }
+}
