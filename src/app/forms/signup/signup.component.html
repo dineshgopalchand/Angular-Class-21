@@ -1,7 +1,7 @@
 <div class="form-container">
     <h3 class="text-center">Sign-Up Form</h3>
     <hr>
-    <form [formGroup]="signUpForm">
+    <form [formGroup]="signUpForm" (ngSubmit)="signUpFormSubmit()">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="First Name" name="firstname" formControlName="firstName">
             <!-- {{firstName.errors | json}} -->

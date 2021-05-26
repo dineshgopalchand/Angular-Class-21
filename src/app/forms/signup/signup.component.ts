@@ -90,4 +90,11 @@ export class SignupComponent implements OnInit {
   resetForm(): void {
     this.signUpForm.reset();
   }
+
+  signUpFormSubmit(): void {
+    console.log(this.signUpForm.value);
+    this.signUpForm.setErrors({ network: 'internet connection failed' }); // setting error on form group
+    this.password.setErrors({}); // setting error on particular control
+
+  }
 }
