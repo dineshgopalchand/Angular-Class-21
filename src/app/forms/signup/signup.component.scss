@@ -3,6 +3,9 @@
     margin: auto;
     .form-group {
         position: relative;
+        .form-control {
+            padding-right: 30px;
+        }
         .fa {
             position: absolute;
             right: 8px;

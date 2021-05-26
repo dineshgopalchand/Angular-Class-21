@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NameValidators } from '../validators/name.validators';
+import { PatternValidators } from '../validators/pattern.validators';
 
 @Component({
   selector: 'app-signup',
@@ -7,13 +9,36 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
+  patternList = [
+    {
+      pattern: /(?=.*?[A-Z])/,
+      error: 'At least one upper case English letter',
+    },
+    {
+      pattern: /(?=.*?[a-z])/,
+      error: 'At least one lower case English lette',
+    },
+    {
+      pattern: /(?=.*?[0-9])/,
+      error: 'At least one digit',
+    },
+    {
+      pattern: /(?=.*?[#?!@$%^&*-])/,
+      error: 'At least one special character',
+    },
+    {
+      pattern: /.{8,}/,
+      error: 'Minimum eight in length',
+    }
+  ];
 
   signUpForm = new FormGroup({
     firstName: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^[ a-z]+$/i)
+      Validators.pattern(/^[ a-z]+$/i),
+      NameValidators.cannotContainsSpace
     ]),
     lastName: new FormControl('', [
       Validators.required,
@@ -28,7 +53,8 @@ export class SignupComponent implements OnInit {
       Validators.pattern(/^[0-9A-Za-z.-]+$/)
     ]),
     password: new FormControl('', [
-      Validators.required
+      Validators.required,
+      PatternValidators.multiplePatterValidation(this.patternList)
     ]),
   });
 

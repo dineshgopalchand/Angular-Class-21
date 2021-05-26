@@ -3,7 +3,7 @@
     <hr>
     <form [formGroup]="signUpForm">
         <div class="form-group">
-            <input type="text" class="form-control" placeholder="First Name" name="firstname" formControlName="firstName">
+            <input type="text" class="form-control" placeholder="First Name" name="firstname" formControlName="firstName"> {{firstName.errors | json}}
             <ng-container *ngIf="firstName.untouched; then info; else message"></ng-container>
 
             <ng-template #info>
@@ -16,12 +16,12 @@
                     'fa-times-circle':!firstName.valid,
                     'error':!firstName.valid
             }"></i>
-                <!-- {{firstName.errors | json}} -->
                 <div class="message-box" *ngIf="firstName.errors">
                     <div *ngIf="firstName.errors.required">First name is required</div>
                     <div *ngIf="firstName.errors.minlength">Required length is {{firstName.errors.minlength.requiredLength}} </div>
                     <div *ngIf="firstName.errors.maxlength">Manimum length allowed {{firstName.errors.maxlength.requiredLength}}</div>
                     <div *ngIf="firstName.errors.pattern">First Name is no valid</div>
+                    <div *ngIf="firstName.errors.containsSpace">First Name shouldn't contains &lt;Space&gt;</div>
                 </div>
                 <!-- <i class="fa fa-times-circle error"></i> -->
             </ng-template>
