@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NameValidators } from '../validators/name.validators';
-import { PatternValidators } from '../validators/pattern.validators';
+import { PatternError, PatternValidators } from '../validators/pattern.validators';
+import { UsernameValidators } from '../validators/username.validators';
 
 @Component({
   selector: 'app-signup',
@@ -9,24 +10,29 @@ import { PatternValidators } from '../validators/pattern.validators';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent implements OnInit {
-  patternList = [
+  patternList: PatternError[] = [
     {
+      errorkey: 'capitalletter',
       pattern: /(?=.*?[A-Z])/,
       error: 'At least one upper case English letter',
     },
     {
+      errorkey: 'lowerletter',
       pattern: /(?=.*?[a-z])/,
       error: 'At least one lower case English lette',
     },
     {
+      errorkey: 'numbermissing',
       pattern: /(?=.*?[0-9])/,
       error: 'At least one digit',
     },
     {
+      errorkey: 'specialcharecter',
       pattern: /(?=.*?[#?!@$%^&*-])/,
       error: 'At least one special character',
     },
     {
+      errorkey: 'requiredlenth',
       pattern: /.{8,}/,
       error: 'Minimum eight in length',
     }
@@ -51,7 +57,10 @@ export class SignupComponent implements OnInit {
       Validators.minLength(3),
       Validators.maxLength(30),
       Validators.pattern(/^[0-9A-Za-z.-]+$/)
-    ]),
+    ],
+      UsernameValidators.shouldBeUnique
+      // [UsernameValidators.shouldBeUnique]
+    ),
     password: new FormControl('', [
       Validators.required,
       PatternValidators.multiplePatterValidation(this.patternList)

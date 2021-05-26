@@ -11,6 +11,10 @@
             right: 8px;
             top: 8px;
             font-size: 1.4rem;
+            &.loader {
+                z-index: 9999;
+                background: white;
+            }
         }
         .message-box {
             display: none;
