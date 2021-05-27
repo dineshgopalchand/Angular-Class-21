@@ -3,11 +3,18 @@
     margin: auto;
     .form-group {
         position: relative;
+        .form-control {
+            padding-right: 30px;
+        }
         .fa {
             position: absolute;
             right: 8px;
             top: 8px;
             font-size: 1.4rem;
+            &.loader {
+                z-index: 9999;
+                background: white;
+            }
         }
         .message-box {
             display: none;

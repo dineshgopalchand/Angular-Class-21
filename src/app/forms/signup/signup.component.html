@@ -1,9 +1,10 @@
 <div class="form-container">
     <h3 class="text-center">Sign-Up Form</h3>
     <hr>
-    <form [formGroup]="signUpForm">
+    <form [formGroup]="signUpForm" (ngSubmit)="signUpFormSubmit()">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="First Name" name="firstname" formControlName="firstName">
+            <!-- {{firstName.errors | json}} -->
             <ng-container *ngIf="firstName.untouched; then info; else message"></ng-container>
 
             <ng-template #info>
@@ -16,12 +17,12 @@
                     'fa-times-circle':!firstName.valid,
                     'error':!firstName.valid
             }"></i>
-                <!-- {{firstName.errors | json}} -->
                 <div class="message-box" *ngIf="firstName.errors">
                     <div *ngIf="firstName.errors.required">First name is required</div>
                     <div *ngIf="firstName.errors.minlength">Required length is {{firstName.errors.minlength.requiredLength}} </div>
                     <div *ngIf="firstName.errors.maxlength">Manimum length allowed {{firstName.errors.maxlength.requiredLength}}</div>
                     <div *ngIf="firstName.errors.pattern">First Name is no valid</div>
+                    <div *ngIf="firstName.errors.containsSpace">First Name shouldn't contains &lt;Space&gt;</div>
                 </div>
                 <!-- <i class="fa fa-times-circle error"></i> -->
             </ng-template>
@@ -34,9 +35,13 @@
         </div>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username" formControlName="userName">
+            <i class="fa fa-spinner loader" *ngIf="userName.pending"></i>
+            <i class="fa fa-info-circle "></i>
+            <p>{{userName.errors | json}}</p>
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password" formControlName="password">
+            <!-- <p>{{password.errors | json}}</p> -->
         </div>
         <div class="row">
             <div class="col">
@@ -46,7 +51,7 @@
             </div>
             <div class="col">
                 <div class="form-group">
-                    <button class="btn btn-primary form-control" type="submit" [disabled]="signUpForm.invalid ">Signup</button>
+                    <button class="btn btn-primary form-control" type="submit" [disabled]="signUpForm.invalid  || signUpForm.pending ">Signup</button>
                 </div>
             </div>
         </div>
@@ -54,5 +59,6 @@
     </form>
     <p>{{signUpForm.value | json}}</p>
     <p>{{signUpForm.valid }}</p>
+    <p>{{signUpForm.pending }}</p>
 
 </div>
