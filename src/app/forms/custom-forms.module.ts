@@ -4,6 +4,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { FormBuilderDemoComponent } from './form-builder-demo/form-builder-demo.component';
 
 
 
@@ -11,7 +12,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   declarations: [
     ContactComponent,
     SignupComponent,
-    TodoListComponent
+    TodoListComponent,
+    FormBuilderDemoComponent
   ],
   imports: [
     CommonModule,
@@ -21,7 +23,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   exports: [
     ContactComponent,
     SignupComponent,
-    TodoListComponent
+    TodoListComponent,
+    FormBuilderDemoComponent
   ]
 })
 export class CustomFormsModule { }
