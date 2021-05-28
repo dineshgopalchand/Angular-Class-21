@@ -5,12 +5,12 @@
         <div class="form-group">
             <input type="text" class="form-control" placeholder="First Name" name="firstname" formControlName="firstName">
             <!-- {{firstName.errors | json}} -->
-            <ng-container *ngIf="firstName.untouched; then info; else message"></ng-container>
+            <ng-container *ngIf="firstName.untouched; then infoFirst; else messageFirst"></ng-container>
 
-            <ng-template #info>
+            <ng-template #infoFirst>
                 <i class="fa fa-info-circle "></i>
             </ng-template>
-            <ng-template #message>
+            <ng-template #messageFirst>
                 <i class="fa fa-check-circle ok" [ngClass]="{ 
                     'fa-check-circle':firstName.valid,
                     'ok':firstName.valid,
@@ -32,16 +32,95 @@
 
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Last Name" name="lastname" formControlName="lastName">
+            <ng-container *ngIf="lastName.untouched; then infoLast; else messageLast"></ng-container>
+
+            <ng-template #infoLast>
+                <i class="fa fa-info-circle "></i>
+            </ng-template>
+            <ng-template #messageLast>
+                <i class="fa " [ngClass]="{ 
+                    'fa-check-circle':lastName.valid,
+                    'ok':lastName.valid,
+                    'fa-times-circle':!lastName.valid,
+                    'error':!lastName.valid
+            }"></i>
+                <div class="message-box" *ngIf="lastName.errors">
+                    <div *ngIf="lastName.errors.required">Last name is required</div>
+                    <div *ngIf="lastName.errors.minlength">Required length is {{lastName.errors.minlength.requiredLength}} </div>
+                    <div *ngIf="lastName.errors.maxlength">Manimum length allowed {{lastName.errors.maxlength.requiredLength}}</div>
+                    <div *ngIf="lastName.errors.pattern">Last Name is no valid</div>
+                    <div *ngIf="lastName.errors.containsSpace">Last Name shouldn't contains &lt;Space&gt;</div>
+                </div>
+            </ng-template>
         </div>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Username" name="username" formControlName="userName">
             <i class="fa fa-spinner loader" *ngIf="userName.pending"></i>
-            <i class="fa fa-info-circle "></i>
-            <p>{{userName.errors | json}}</p>
+            <ng-container *ngIf="userName.untouched; then infoUser; else messageUser"></ng-container>
+
+            <ng-template #infoUser>
+                <i class="fa fa-info-circle "></i>
+            </ng-template>
+            <ng-template #messageUser>
+                <i class="fa " [ngClass]="{ 
+                    'fa-check-circle':userName.valid,
+                    'ok':userName.valid,
+                    'fa-times-circle':!userName.valid,
+                    'error':!userName.valid
+            }"></i>
+                <div class="message-box" *ngIf="userName.errors">
+                    <div *ngIf="userName.errors.required">Username is required</div>
+                    <div *ngIf="userName.errors.minlength">Required length is {{userName.errors.minlength.requiredLength}} </div>
+                    <div *ngIf="userName.errors.maxlength">Manimum length allowed {{userName.errors.maxlength.requiredLength}}</div>
+                    <div *ngIf="userName.errors.pattern">Username is not valid</div>
+                    <div *ngIf="userName.errors.shouldBeUnique">Username already exist.</div>
+
+                </div>
+            </ng-template>
+            <!-- <p>{{userName.errors | json}}</p> -->
         </div>
         <div class="form-group">
             <input type="password" class="form-control" placeholder="Password" name="password" formControlName="password">
+            <ng-container *ngIf="password.untouched; then infoPass; else messagePass"></ng-container>
+
+            <ng-template #infoPass>
+                <i class="fa fa-info-circle "></i>
+            </ng-template>
+            <ng-template #messagePass>
+                <i class="fa" [ngClass]="{ 
+                    'fa-check-circle':password.valid,
+                    'ok':password.valid,
+                    'fa-times-circle':!password.valid,
+                    'error':!password.valid
+            }"></i>
+                <div class="message-box" *ngIf="password.errors">
+                    <div class="error-list">
+                        <i class="fa" [ngClass]="{ 
+                            'fa-check-circle':!password.errors.required,
+                            'ok':!password.errors.required,
+                            'fa-times-circle':password.errors.required,
+                            'error':password.errors.required
+                    }"></i> Password is required</div>
+                    <div *ngFor="let p of patternList" class="error-list">
+                        <i class="fa" [ngClass]="{ 
+                            'fa-check-circle':!password.errors[p.errorkey],
+                            'ok':!password.errors[p.errorkey],
+                            'fa-times-circle':password.errors[p.errorkey],
+                            'error':password.errors[p.errorkey]
+                    }"></i> {{p.error}}
+                    </div>
+
+                </div>
+            </ng-template>
             <!-- <p>{{password.errors | json}}</p> -->
+        </div>
+        <div formGroupName="contact">
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Enter email id" formControlName="email">
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" name="phone" placeholder="+91-8797397233" formControlName="phone">
+            </div>
         </div>
         <div class="row">
             <div class="col">

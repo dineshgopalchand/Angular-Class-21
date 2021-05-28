@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 import { ContactComponent } from './contact/contact.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
+import { FormBuilderDemoComponent } from './form-builder-demo/form-builder-demo.component';
 
 
 
 @NgModule({
   declarations: [
     ContactComponent,
-    SignupComponent
+    SignupComponent,
+    TodoListComponent,
+    FormBuilderDemoComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +22,9 @@ import { SignupComponent } from './signup/signup.component';
   ],
   exports: [
     ContactComponent,
-    SignupComponent
+    SignupComponent,
+    TodoListComponent,
+    FormBuilderDemoComponent
   ]
 })
 export class CustomFormsModule { }

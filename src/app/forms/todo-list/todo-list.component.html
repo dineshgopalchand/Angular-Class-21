@@ -1,0 +1,26 @@
+<h3>To Do List</h3>
+<hr>
+<form [formGroup]="taskForm" (ngSubmit)="addCourse()">
+    <div class="row">
+        <div class="col-10">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="subject">
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-primary">Add Task</button>
+        </div>
+    </div>
+
+</form>
+<!-- <div class="container"> -->
+<div class="todo-list mt-2">
+    <ul class="list-group">
+        <li class="list-group-item todo-item" *ngFor="let task of taskList.controls">
+            <i class="fa fa-trash danger" aria-hidden="true" title="Delete" (click)="delete(task)"></i>
+            <i class="fa fa-beer " [class.active]="task.value.status" [class.inactive]="!task.value.status" aria-hidden="true" title="Active/Inactive" (click)="changeTaskStatus(task)"></i>
+            <span>{{task.value.subject}}</span>
+        </li>
+    </ul>
+</div>
+<!-- </div> -->
