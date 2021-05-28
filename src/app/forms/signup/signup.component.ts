@@ -66,6 +66,10 @@ export class SignupComponent implements OnInit {
       Validators.required,
       PatternValidators.multiplePatterValidation(this.patternList)
     ]),
+    contact: new FormGroup({
+      email: new FormControl('', [Validators.required, Validators.email]),
+      phone: new FormControl('')
+    })
   });
 
   constructor() { }
@@ -86,6 +90,12 @@ export class SignupComponent implements OnInit {
   }
   get password(): FormControl {
     return this.signUpForm.get('password') as FormControl;
+  }
+  get email(): FormControl {
+    return this.signUpForm.get('contact.email') as FormControl;
+  }
+  get phone(): FormControl {
+    return this.signUpForm.get('contact.phone') as FormControl;
   }
 
   resetForm(): void {

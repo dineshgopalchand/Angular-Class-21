@@ -114,6 +114,14 @@
             </ng-template>
             <!-- <p>{{password.errors | json}}</p> -->
         </div>
+        <div formGroupName="contact">
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Enter email id" formControlName="email">
+            </div>
+            <div class="form-group">
+                <input type="tel" class="form-control" name="phone" placeholder="+91-8797397233" formControlName="phone">
+            </div>
+        </div>
         <div class="row">
             <div class="col">
                 <div class="form-group">
@@ -128,8 +136,8 @@
         </div>
 
     </form>
-    <!-- <p>{{signUpForm.value | json}}</p>
+    <p>{{signUpForm.value | json}}</p>
     <p>{{signUpForm.valid }}</p>
-    <p>{{signUpForm.pending }}</p> -->
+    <p>{{signUpForm.pending }}</p>
 
 </div>
