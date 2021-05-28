@@ -32,9 +32,9 @@ export class SignupComponent implements OnInit {
       error: 'At least one special character',
     },
     {
-      errorkey: 'requiredlenth',
+      errorkey: 'requiredlength',
       pattern: /.{8,}/,
-      error: 'Minimum eight in length',
+      error: 'Minimum length required is 8',
     }
   ];
 
@@ -43,19 +43,20 @@ export class SignupComponent implements OnInit {
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^[ a-z]+$/i),
+      Validators.pattern(/^[a-z]+$/i),
       NameValidators.cannotContainsSpace
     ]),
     lastName: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
       Validators.maxLength(20),
-      Validators.pattern(/^[a-z]+$/i)
+      Validators.pattern(/^[a-z]+$/i),
+      NameValidators.cannotContainsSpace
     ]),
     userName: new FormControl('', [
       Validators.required,
-      Validators.minLength(3),
-      Validators.maxLength(30),
+      Validators.minLength(6),
+      Validators.maxLength(20),
       Validators.pattern(/^[0-9A-Za-z.-]+$/)
     ],
       UsernameValidators.shouldBeUnique

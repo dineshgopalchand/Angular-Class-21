@@ -16,6 +16,12 @@
                 background: white;
             }
         }
+        .error-list {
+            position: relative;
+            .fa {
+                top: 2px;
+            }
+        }
         .message-box {
             display: none;
             position: absolute;
