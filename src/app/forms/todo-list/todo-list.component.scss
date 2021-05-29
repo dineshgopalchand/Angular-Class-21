@@ -1,0 +1,17 @@
+.todo-item {
+    border: 1px solid gray;
+    .fa {
+        font-size: 1.5rem;
+        margin-right: 15px;
+        cursor: pointer;
+        &.danger {
+            color: red;
+        }
+        &.inactive {
+            color: gray;
+        }
+        &.active {
+            color: black;
+        }
+    }
+}
