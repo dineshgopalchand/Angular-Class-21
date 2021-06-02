@@ -1,27 +1,29 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course.component';
+import { CoursesListingComponent } from './courses-listing/courses-listing.component';
 import { CoursesComponent } from './courses/courses.component';
-import { CourseService } from './services/course.service';
-import { CoursesService } from './services/courses.service';
+import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
-import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
-import { FormsModule } from '@angular/forms';
-import { PipeModule } from './pipe/pipe.module';
-import { SharedModule } from './shared/shared.module';
-import { ResuableComponent } from './resuable/resuable.component';
-import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
-import { LikeComponent } from './like/like.component';
-import { ThemesModule } from './themes/themes.module';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DashboardMenuComponent } from './dashboard-menu/dashboard-menu.component';
-import { LocationMapComponent } from './location-map/location-map.component';
-import { CoursesListingComponent } from './courses-listing/courses-listing.component';
 import { CustomFormsModule } from './forms/custom-forms.module';
+import { LikeModule } from './like/like.module';
+import { LocationMapComponent } from './location-map/location-map.component';
+import { PipeModule } from './pipe/pipe.module';
+import { PostModule } from './post/post.module';
+import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
+import { ResuableComponent } from './resuable/resuable.component';
+import { CourseService } from './services/course.service';
+import { CoursesService } from './services/courses.service';
+import { SharedModule } from './shared/shared.module';
+import { ThemesModule } from './themes/themes.module';
+import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+
 
 
 @NgModule({
@@ -34,7 +36,6 @@ import { CustomFormsModule } from './forms/custom-forms.module';
     TwoWayBindingComponent,
     ResuableComponent,
     ResuableDemoComponent,
-    LikeComponent,
     DashboardComponent,
     DashboardMenuComponent,
     LocationMapComponent,
@@ -47,8 +48,11 @@ import { CustomFormsModule } from './forms/custom-forms.module';
     PipeModule,
     SharedModule,
     ThemesModule,
-    CustomFormsModule
-],
+    CustomFormsModule,
+    HttpClientModule,
+    PostModule,
+    LikeModule
+  ],
   providers: [
     CoursesService,
     CourseService

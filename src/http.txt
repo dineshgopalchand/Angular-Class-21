@@ -1,0 +1,9 @@
+1. Import HttpClientModule in the module
+import { HttpClientModule } from '@angular/common/http'
+
+2. in the component/services create alias of HttpClientModule
+import { HttpClient } from '@angular/common/http'
+
+constructor(private http:HttpClient){
+    // use http to work on the restfull api
+}

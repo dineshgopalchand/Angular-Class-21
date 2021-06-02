@@ -18,6 +18,7 @@ export class LikeComponent implements OnInit {
 
   @Input() isLiked = false;
   @Input() count = 0;
+  @Input() idVal = '';
 
   @Output() likeUpdate = new EventEmitter();
   constructor() { }
@@ -33,7 +34,8 @@ export class LikeComponent implements OnInit {
     }
     const value: LikeValue = {
       like: this.isLiked,
-      count: this.count
+      count: this.count,
+      id: this.idVal
     };
     this.likeUpdate.emit(
       value
@@ -45,4 +47,5 @@ export class LikeComponent implements OnInit {
 export interface LikeValue {
   like: boolean;
   count: number;
+  id: string;
 }
