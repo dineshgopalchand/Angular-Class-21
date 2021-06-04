@@ -1,39 +1,66 @@
 {
-    "posts": [{
-            "id": 1,
-            "title": "json-server",
-            "author": "typicode",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!"
-        },
-        {
-            "id": 2,
-            "title": "Angualr",
-            "author": "Google",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
-            "like": false,
-            "count": 10
-        },
-        {
-            "id": 3,
-            "title": "Nodejs",
-            "author": "Rayn Dhal",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
-            "like": true,
-            "count": 8
-        },
-        {
-            "id": 4,
-            "title": "Genius Tech",
-            "author": "Ajay & Anil",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!"
-        }
-    ],
-    "comments": [{
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-    }],
-    "profile": {
-        "name": "typicode"
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!"
+    },
+    {
+      "id": 2,
+      "title": "Angualr",
+      "author": "Google",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
+      "like": false,
+      "count": 10
+    },
+    {
+      "id": 3,
+      "title": "Nodejs",
+      "author": "Rayn Dhal",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
+      "like": true,
+      "count": 8
+    },
+    {
+      "id": 4,
+      "title": "Genius Tech",
+      "author": "Ajay & Anil",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!"
+    },
+    {
+      "author": "Denis rechird",
+      "description": "this is aboutt c lange",
+      "title": "C language",
+      "id": "f6cd36ef-05d3-4cbb-b75e-78ee86bdc5b4",
+      "count": 0,
+      "like": false
+    },
+    {
+      "author": "Gopal",
+      "description": "India is all about you...",
+      "title": "Greate Indian ",
+      "id": "b99b5e58-26e8-4913-8aca-0e76839f3af6",
+      "count": 0,
+      "like": false
+    },
+    {
+      "author": "Chand",
+      "description": "2nd largest train network",
+      "title": "Indian Train",
+      "id": "e5cdeec1-bc41-45e8-badf-31803aeb6963",
+      "count": 0,
+      "like": false
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

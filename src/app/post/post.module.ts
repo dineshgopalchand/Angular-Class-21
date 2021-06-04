@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PostComponent } from './post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LikeModule } from '../like/like.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { LikeModule } from '../like/like.module';
   imports: [
     CommonModule,
     HttpClientModule,
-    LikeModule
+    LikeModule,
+    ReactiveFormsModule
   ],
   exports: [
     PostComponent
