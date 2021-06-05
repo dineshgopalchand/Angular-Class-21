@@ -24,7 +24,10 @@
     </form>
     <div class="post-container">
         <div class="post row" *ngFor="let post of postList">
-
+            <div class="col-2">
+                <button class="btn btn-primary form-control " (click)="updatePost(post)">Update</button>
+                <button class="btn btn-danger form-control " (click)="deletePost(post)">Delete</button>
+            </div>
             <div class="col-1 notification">
                 <!-- <div>like</div>
                     <div class="count">2</div> -->
