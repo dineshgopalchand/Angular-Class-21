@@ -1,54 +1,76 @@
 {
-    "posts": [{
-            "id": 2,
-            "title": "Angualr - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1",
-            "author": "Google",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo! - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1",
-            "like": false,
-            "count": 10
-        },
-        {
-            "id": 3,
-            "title": "Nodejs",
-            "author": "Rayn Dhal",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
-            "like": true,
-            "count": 8
-        },
-        {
-            "id": 4,
-            "title": "Genius Tech - 1",
-            "author": "Ajay & Anil",
-            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo! - 1"
-        },
-        {
-            "author": "Denis rechird",
-            "description": "this is aboutt c lange",
-            "title": "C language",
-            "id": "f6cd36ef-05d3-4cbb-b75e-78ee86bdc5b4",
-            "count": 0,
-            "like": false
-        },
-        {
-            "author": "Chand",
-            "description": "2nd largest train network",
-            "title": "Indian Train",
-            "id": "e5cdeec1-bc41-45e8-badf-31803aeb6963",
-            "count": 0,
-            "like": false
-        },
-        {
-            "author": "The  great indian",
-            "description": "Don't poke me , I will poke you",
-            "title": "Indian Road",
-            "id": "3c40ce0d-3375-4644-9527-2144d6a27064",
-            "count": 0,
-            "like": false
-        }
-    ],
-    "comments": [],
-    "profile": {
-        "name": "typicode"
+  "posts": [
+    {
+      "id": 2,
+      "title": "Angualr - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1",
+      "author": "Google",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo! - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1",
+      "like": false,
+      "count": 10
     },
-    "todo": []
+    {
+      "id": 3,
+      "title": "Nodejs",
+      "author": "Rayn Dhal",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
+      "like": true,
+      "count": 8
+    },
+    {
+      "id": 4,
+      "title": "Genius Tech - 1",
+      "author": "Ajay & Anil",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo! - 1"
+    },
+    {
+      "author": "Denis rechird",
+      "description": "this is aboutt c lange",
+      "title": "C language",
+      "id": "f6cd36ef-05d3-4cbb-b75e-78ee86bdc5b4",
+      "count": 0,
+      "like": false
+    },
+    {
+      "author": "Chand",
+      "description": "2nd largest train network",
+      "title": "Indian Train",
+      "id": "e5cdeec1-bc41-45e8-badf-31803aeb6963",
+      "count": 0,
+      "like": false
+    },
+    {
+      "author": "The  great indian",
+      "description": "Don't poke me , I will poke you",
+      "title": "Indian Road",
+      "id": "3c40ce0d-3375-4644-9527-2144d6a27064",
+      "count": 0,
+      "like": false
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  },
+  "todo": [
+    {
+      "id": "43feae23-0721-4cd2-af33-ac410863d09f",
+      "subject": "task 1",
+      "status": false
+    },
+    {
+      "id": "2724662c-e0e4-4d63-af70-b056e0f2b63c",
+      "subject": "task 2",
+      "status": true
+    },
+    {
+      "id": "441ca139-bb3b-4d98-90a9-9d64576d3a6b",
+      "subject": "task 3",
+      "status": true
+    },
+    {
+      "id": "b5ee036f-bef8-47d6-8079-68019376d366",
+      "subject": "task 4",
+      "status": true
+    }
+  ]
 }
