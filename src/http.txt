@@ -7,3 +7,8 @@ import { HttpClient } from '@angular/common/http'
 constructor(private http:HttpClient){
     // use http to work on the restfull api
 }
+
+to fetch data 
+http.get('url',<options>).subscribe(res=>{
+console.log(res);
+})
