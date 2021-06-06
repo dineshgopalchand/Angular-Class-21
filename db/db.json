@@ -1,16 +1,10 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!"
-    },
-    {
       "id": 2,
-      "title": "Angualr",
+      "title": "Angualr - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1",
       "author": "Google",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo! - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1 - 1",
       "like": false,
       "count": 10
     },
@@ -24,23 +18,15 @@
     },
     {
       "id": 4,
-      "title": "Genius Tech",
+      "title": "Genius Tech - 1",
       "author": "Ajay & Anil",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo!"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure eveniet enim autem natus ratione reprehenderit, facilis tempore quisquam ex illo! - 1"
     },
     {
       "author": "Denis rechird",
       "description": "this is aboutt c lange",
       "title": "C language",
       "id": "f6cd36ef-05d3-4cbb-b75e-78ee86bdc5b4",
-      "count": 0,
-      "like": false
-    },
-    {
-      "author": "Gopal",
-      "description": "India is all about you...",
-      "title": "Greate Indian ",
-      "id": "b99b5e58-26e8-4913-8aca-0e76839f3af6",
       "count": 0,
       "like": false
     },
@@ -61,14 +47,30 @@
       "like": false
     }
   ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
+  "comments": [],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "todo": [
+    {
+      "id": "43feae23-0721-4cd2-af33-ac410863d09f",
+      "subject": "task 1",
+      "status": false
+    },
+    {
+      "id": "2724662c-e0e4-4d63-af70-b056e0f2b63c",
+      "subject": "task 2",
+      "status": true
+    },
+    {
+      "id": "441ca139-bb3b-4d98-90a9-9d64576d3a6b",
+      "subject": "task 3",
+      "status": true
+    },
+    {
+      "id": "b5ee036f-bef8-47d6-8079-68019376d366",
+      "subject": "task 4",
+      "status": true
+    }
+  ]
 }

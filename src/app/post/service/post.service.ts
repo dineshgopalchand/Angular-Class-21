@@ -8,11 +8,18 @@ export class PostService {
   url = 'http://localhost:3021/posts';
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Post[]> {
+  getPost(): Observable<Post[]> {
     return this.http.get(this.url) as Observable<Post[]>;
   }
-  create(postData: Post): Observable<Post> {
+  createPost(postData: Post): Observable<Post> {
     return this.http.post(this.url, postData) as Observable<Post>;
+  }
+
+  updatePost(id: any, post: Post): Observable<Post> {
+    return this.http.put(this.url + '/' + id, post) as Observable<Post>;
+  }
+  deletePost(id: any): Observable<any> {
+    return this.http.delete(this.url + '/' + id) as Observable<any>;
   }
 }
 

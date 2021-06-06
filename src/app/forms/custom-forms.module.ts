@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { FormBuilderDemoComponent } from './form-builder-demo/form-builder-demo.component';
+import { ToDoService } from './service/to-do.service';
 
 
 
@@ -19,6 +20,9 @@ import { FormBuilderDemoComponent } from './form-builder-demo/form-builder-demo.
     CommonModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    ToDoService
   ],
   exports: [
     ContactComponent,

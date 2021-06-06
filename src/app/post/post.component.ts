@@ -26,7 +26,7 @@ export class PostComponent implements OnInit {
   }
 
   getAll(): void {
-    this.postService.getAll()
+    this.postService.getPost()
       .subscribe(res => {
         // console.log(res);
         this.postList = res;
@@ -45,7 +45,7 @@ export class PostComponent implements OnInit {
       count: 0,
       like: false
     };
-    this.postService.create(postData)
+    this.postService.createPost(postData)
       .subscribe(res => {
         console.log(res);
         this.postList.push(postData);
@@ -54,6 +54,28 @@ export class PostComponent implements OnInit {
         setTimeout(() => {
           this.newDataInserted = false;
         }, 2000);
+      });
+  }
+  updatePost(post: Post): void {
+    console.log(post);
+    // const newPost = Object.assign({}, post);
+    const newPost = { ...post };
+    const indexVal = this.postList.indexOf(post);
+    newPost.title = newPost.title + ' - 1';
+    newPost.description = newPost.description + ' - 1';
+    console.log(newPost);
+    this.postService.updatePost(post.id, newPost)
+      .subscribe(res => {
+        this.postList.splice(indexVal, 1, res);
+      });
+  }
+  deletePost(post: Post): void {
+    // console.log(post);
+    const indexVal = this.postList.indexOf(post);
+    this.postService.deletePost(post.id)
+      .subscribe(res => {
+        console.log(res);
+        this.postList.splice(indexVal, 1);
       });
   }
 
