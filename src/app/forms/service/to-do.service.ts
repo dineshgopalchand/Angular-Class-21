@@ -21,7 +21,7 @@ export class ToDoService {
   }
 
   updateToDo(id: any, newToData: ToDoItem): Observable<ToDoItem> {
-    return (this.http.put(this.url + '/' + 'id', newToData) as Observable<ToDoItem>)
+    return (this.http.put(this.url + '/' + id, newToData) as Observable<ToDoItem>)
       .pipe(catchError(handleError));
   }
   deleteToDo(id: any): Observable<any> {
