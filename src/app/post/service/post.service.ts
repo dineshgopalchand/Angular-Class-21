@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/internal/Observable';
 import { DataService } from 'src/app/shared/_helper/data-service';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class PostService extends DataService {
 
 
   constructor(http: HttpClient) {
-    const url = 'http://localhost:3021/posts';
+    const url = environment.API.postlink;
     super(http, url);
   }
 
