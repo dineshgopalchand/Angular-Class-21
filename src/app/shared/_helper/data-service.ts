@@ -1,23 +1,29 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { AppError } from './app-error';
+import { InvalidInputError } from './invalid-input-error';
+import { NotFoundError } from './not-found-error';
+import { UnAuthrizedAccessError } from './un-authrized-access-error';
 
 export class DataService {
     constructor(protected http: HttpClient, protected url: string) { }
     protected handleError = (error: HttpErrorResponse) => {
         const status = error.status;
+        let errorVal: any = {};
         if (status === 404) {
-            console.log('URL Not found');
+            errorVal = new NotFoundError(error);
         } else
             if (status === 400) {
-                console.log('Invalid Input');
+                errorVal = new InvalidInputError(error);
             } else
                 if (status === 401) {
-                    console.log('Unauthorize Access');
+                    errorVal = new UnAuthrizedAccessError(error);
                 } else {
-                    console.log('unexpected error');
+                    // console.log('unexpected error');
+                    errorVal = new AppError(error);
                 }
-        return throwError({});
+        return throwError(errorVal);
     }
     getAll(): Observable<any> {
         return (this.http.get(this.url) as Observable<any>)
