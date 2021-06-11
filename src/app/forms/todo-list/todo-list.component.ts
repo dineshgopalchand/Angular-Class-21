@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToDoItem, ToDoService } from '../service/to-do.service';
 import { v4 as uuidv4 } from 'uuid';
+import { NotFoundError } from 'src/app/shared/_helper/not-found-error';
 // import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-todo-list',
@@ -30,19 +31,9 @@ export class TodoListComponent implements OnInit {
         for (const toDoTask of res) {
           this.taskList.push(this.getTaskForm(toDoTask));
         }
-      }
-      // , error => {
-      //   // console.log(error);
-      //   const status = (error as HttpErrorResponse).status;
-      //   // console.log(status);
-      //   if (status === 404) {
-      //     console.log('URL Not found');
-      //   }
-      // }
-      //   // , () => {
-      //   //   console.log('complete');
-      //   // }
-      );
+      }, error => {
+        console.log(error);
+      });
   }
 
   get subject(): FormControl {
@@ -63,18 +54,9 @@ export class TodoListComponent implements OnInit {
       .subscribe(res => {
         this.taskList.push(newFormGroup);
         this.taskForm.reset();
-      }
-      // ,
-      //   (error: HttpErrorResponse) => {
-      //     const status = error.status;
-      //     console.log(status);
-      //     if (status === 404) {
-      //       console.log('Not available');
-      //     } else {
-      //       console.log('unexpected result');
-      //     }
-      //   }
-        );
+      }, error => {
+        console.log(error);
+      });
 
 
     // console.log(this.taskList);
@@ -88,18 +70,9 @@ export class TodoListComponent implements OnInit {
       .subscribe(res => {
         // console.log(res)
         taskControls.splice(indexVal, 1);
-      }
-      // ,
-      //   (error: HttpErrorResponse) => {
-      //     const status = error.status;
-      //     console.log(status);
-      //     if (status === 404) {
-      //       console.log('Task is already deleted');
-      //     } else {
-      //       console.log('unexpected result');
-      //     }
-      //   }
-        );
+      }, error => {
+        console.log(error);
+      });
   }
   changeTaskStatus(task: any): void {
     const taskControls = this.taskList.controls;
@@ -116,18 +89,9 @@ export class TodoListComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
         taskControls.splice(indexVal, 1, newForm);
-      }
-      // ,
-      //   (error: HttpErrorResponse) => {
-      //     const status = error.status;
-      //     console.log(status);
-      //     if (status === 404) {
-      //       console.log('Task is already deleted');
-      //     } else {
-      //       console.log('unexpected result');
-      //     }
-      //   }
-        );
+      }, error => {
+        console.log(error);
+      });
 
   }
 
