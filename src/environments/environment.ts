@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  name: 'dev',
   API: {
     postlink: 'http://localhost:3021/posts',
     todolink: 'http://localhost:3021/todo',

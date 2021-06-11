@@ -8,7 +8,9 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "dbstart": "json-server --watch db/db.json --port 3021"
+        "dbstart": "json-server --watch db/db.json --port 3021",
+        "build:qa": "ng build --configuration=qa --output-path=dist/qa",
+        "build:prod": "ng build --prod --output-path=dist/production"
     },
     "private": true,
     "dependencies": {
