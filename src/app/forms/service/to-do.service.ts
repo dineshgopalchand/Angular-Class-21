@@ -1,32 +1,30 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
 import { Observable } from 'rxjs/internal/Observable';
-import { catchError } from 'rxjs/operators';
+import { DataService } from 'src/app/shared/_helper/data-service';
 
 
 @Injectable()
-export class ToDoService {
+export class ToDoService extends DataService {
 
-  url = 'http://localhost:3021/todo';
-  constructor(private http: HttpClient) { }
+  constructor(http: HttpClient) {
+    const url = 'http://localhost:3021/todo';
+    super(http, url);
+  }
 
   getToDo(): Observable<ToDoItem[]> {
-    return (this.http.get(this.url) as Observable<ToDoItem[]>)
-      .pipe(catchError(handleError));
+    return this.getAll() as Observable<ToDoItem[]>;
   }
   createToDo(toDoData: ToDoItem): Observable<ToDoItem> {
-    return (this.http.post(this.url, toDoData) as Observable<ToDoItem>)
-      .pipe(catchError(handleError));
+    return this.create(toDoData) as Observable<ToDoItem>;
   }
 
   updateToDo(id: any, newToData: ToDoItem): Observable<ToDoItem> {
-    return (this.http.put(this.url + '/' + id, newToData) as Observable<ToDoItem>)
-      .pipe(catchError(handleError));
+    return this.update(id, newToData) as Observable<ToDoItem>;
   }
+
   deleteToDo(id: any): Observable<any> {
-    return (this.http.delete(this.url + '/' + id) as Observable<any>)
-      .pipe(catchError(handleError));
+    return this.delete(id) as Observable<any>;
   }
 }
 
@@ -35,19 +33,3 @@ export interface ToDoItem {
   subject: string;
   status: boolean;
 }
-
-export const handleError = (error: HttpErrorResponse) => {
-  const status = error.status;
-  if (status === 404) {
-    console.log('URL Not found');
-  } else
-    if (status === 400) {
-      console.log('Invalid Input');
-    } else
-      if (status === 401) {
-        console.log('Unauthorize Access');
-      } else {
-        console.log('unexpected error');
-      }
-  return throwError({});
-};
