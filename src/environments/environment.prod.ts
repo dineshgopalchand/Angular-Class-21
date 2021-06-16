@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  name: 'prod',
+  name: '',
   API: {
     postlink: 'http://localhost:3021/posts',
     todolink: 'http://localhost:3021/todo',
