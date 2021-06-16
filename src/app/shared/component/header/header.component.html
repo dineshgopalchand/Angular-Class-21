@@ -6,22 +6,22 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a class="navbar-brand" routerLink="/">Angular Class</a>
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+            <li class="nav-item " [routerLinkActive]="'active hignlight'" [routerLinkActiveOptions]="{exact:true}">
                 <a class="nav-link" [routerLink]="['/']">Home</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item " [routerLinkActive]="'active hignlight'">
                 <a class="nav-link" [routerLink]="['course']">Course</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" [routerLinkActive]="'active hignlight'">
                 <a class="nav-link" [routerLink]="['/','contact']">Contact</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" [routerLinkActive]="'active hignlight'">
                 <a class="nav-link" routerLink="/task">Task</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" [routerLinkActive]="'active hignlight'">
                 <a class="nav-link" routerLink="/post">Post</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" [routerLinkActive]="'active hignlight'">
                 <a class="nav-link" routerLink="/user">Login/register</a>
             </li>
         </ul>

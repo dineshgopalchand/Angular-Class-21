@@ -10,3 +10,13 @@
     left: -62px;
     padding-top: 21px;
 }
+
+.hignlight {
+    background: blue;
+    font-weight: 500;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 3px;
+    a.nav-link {
+        color: white !important;
+    }
+}
