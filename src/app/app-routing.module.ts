@@ -29,7 +29,7 @@ const routes: Routes = [
   {
     path: 'post',
     component: PostComponent
-  },
+},
   {
     path: 'user',
     component: SignupComponent
