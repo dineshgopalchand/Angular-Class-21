@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { EventBindingComponent } from './event-binding/event-binding.component';
 import { CustomFormsModule } from './forms/custom-forms.module';
+import { HomeComponent } from './home/home.component';
 import { LikeModule } from './like/like.module';
 import { LocationMapComponent } from './location-map/location-map.component';
 import { PipeModule } from './pipe/pipe.module';
@@ -23,8 +24,15 @@ import { CoursesService } from './services/courses.service';
 import { SharedModule } from './shared/shared.module';
 import { ThemesModule } from './themes/themes.module';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
+// const routes: Routes = [
+//   {
+//     path: 'contact',
+//     component: ContactComponent
+//   }
+// ];
 
 @NgModule({
   declarations: [
@@ -39,11 +47,14 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
     DashboardComponent,
     DashboardMenuComponent,
     LocationMapComponent,
-    CoursesListingComponent
+    CoursesListingComponent,
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    // RouterModule.forRoot(routes),
     FormsModule,
     PipeModule,
     SharedModule,

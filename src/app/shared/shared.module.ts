@@ -5,6 +5,7 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ListingDirective } from './directives/listing.directive';
 import { NameValidationDirective } from './directives/name-validation.directive';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -17,7 +18,8 @@ import { NameValidationDirective } from './directives/name-validation.directive'
     NameValidationDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   providers: [
     TitleCasePipe,
