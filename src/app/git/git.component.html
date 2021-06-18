@@ -1,0 +1,30 @@
+<h3>Github details</h3>
+<hr>
+<form [formGroup]="gitSearchForm" (ngSubmit)="searchFromSubmit()">
+    <div class="row">
+        <div class="col-8">
+            <div class="form-group">
+                <input type="text" class="form-control" formControlName="username">
+            </div>
+        </div>
+        <div class="col">
+            <button type="submit" [disabled]="gitSearchForm.invalid" class="btn btn-primary pr-4 pl-4">
+            <i class="fa fa-search"></i>
+        </button>
+        </div>
+    </div>
+</form>
+
+<div class="git-details" *ngIf="gitUserName">
+    <nav class="nav git-nav">
+        <a class="nav-link active" href="#">Profile</a>
+        <a class="nav-link" href="#">Followers</a>
+        <a class="nav-link" href="#">Repo</a>
+    </nav>
+    <div>
+        <!-- <app-profile></app-profile>
+    <app-follower></app-follower>
+    <app-repo></app-repo> -->
+        <router-outlet></router-outlet>
+    </div>
+</div>
