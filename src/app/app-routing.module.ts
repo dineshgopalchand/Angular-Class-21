@@ -29,10 +29,14 @@ const routes: Routes = [
   {
     path: 'post',
     component: PostComponent
-},
+  },
   {
     path: 'user',
     component: SignupComponent
+  },
+  {
+    path: 'github',
+    loadChildren: () => import('./git/git.module').then(m => m.GitModule)
   },
   {
     path: '**',

@@ -1,0 +1,16 @@
+.form-control.ng-invalid.ng-touched {
+    border-color: red;
+}
+
+.git-nav {
+    background: #e1e1e1;
+    padding: 2px;
+    .nav-link {
+        background: white;
+        margin-right: 2px;
+        &.active {
+            font-weight: bold;
+            color: green;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { FollowerComponent } from './follower/follower.component';
+import { GitComponent } from './git.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RepoComponent } from './repo/repo.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: GitComponent
+  },
+  {
+    path: ':username',
+    component: GitComponent,
+    children: [
+      {
+        path: '',
+        component: ProfileComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'followers',
+        component: FollowerComponent
+      },
+      {
+        path: 'repos',
+        component: RepoComponent
+      }
+    ]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
+export class GitRoutingModule { }

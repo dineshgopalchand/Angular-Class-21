@@ -43,5 +43,11 @@ export class DataService {
             .pipe(catchError(this.handleError));
     }
 
+    fetchData(newURL: string, option?: JSON): Observable<any> {
+        const options = option ? option : {};
+        return (this.http.get(newURL, options) as Observable<any>)
+            .pipe(catchError(this.handleError));
+    }
+
 }
 
