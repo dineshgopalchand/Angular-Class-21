@@ -13,17 +13,17 @@ export class FollowerComponent implements OnInit {
 
   userName = '';
   followerList: JSONFormat[] = [];
-  constructor(private activedRoute: ActivatedRoute, private gitService: GitDetailsService) { }
+  constructor(private route: ActivatedRoute, private gitService: GitDetailsService) { }
 
   ngOnInit(): void {
 
-    //  activedRoute.paramMap or activedRoute.params will help us to get params data of url from same route
-    this.activedRoute.paramMap
+    //  ActivatedRoute.paramMap or ActivatedRoute.params will help us to get params data of url from same route
+    this.route.paramMap
       .subscribe(params => {
       });
 
-    //  activedRoute.paramMap or activedRoute.params will help us to get params data for url from parent route
-    this.activedRoute.parent?.paramMap
+    //  ActivatedRoute.paramMap or ActivatedRoute.params will help us to get params data for url from parent route
+    this.route.parent?.paramMap
       .pipe(switchMap(params => {
         console.log(params);
         this.userName = params.get('username') as string;
@@ -32,6 +32,18 @@ export class FollowerComponent implements OnInit {
       )).subscribe(data => {
         console.log(data);
         this.followerList = data as JSONFormat[];
+      });
+
+
+
+    // ActivatedRoute.queryParamMap && ActivatedRoute.queryParams to fetch query params info from url (?p=1&n=2)
+    // this.route.queryParamMap
+    //   .subscribe(qparams => {
+    //     console.log(qparams);
+    //   });
+    this.route.queryParams
+      .subscribe(qparams => {
+        console.log(qparams);
       });
   }
 
