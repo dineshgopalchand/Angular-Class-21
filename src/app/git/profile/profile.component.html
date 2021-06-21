@@ -1,1 +1,13 @@
-<p>profile works!</p>
+<div class="d-flex ">
+    <div class="p-2  ">
+        <img class="profile-image" [src]="userDetails.avatar_url" [alt]="userDetails.name">
+    </div>
+    <div class="p-2 ">
+        <h4>{{userDetails.name}} - <small>{{userDetails.company}}</small></h4>
+        <p>{{userDetails.bio}}</p>
+        <div>
+            <button class="btn btn-primary m-2">Followers</button>
+            <button class="btn btn-primary m-2">Repos</button>
+        </div>
+    </div>
+</div>
