@@ -6,8 +6,8 @@
         <h4>{{userDetails.name}} - <small>{{userDetails.company}}</small></h4>
         <p>{{userDetails.bio}}</p>
         <div>
-            <button class="btn btn-primary m-2">Followers</button>
-            <button class="btn btn-primary m-2">Repos</button>
+            <button class="btn btn-primary m-2" [routerLink]="['../','followers']">Followers</button>
+            <button class="btn btn-primary m-2" [routerLink]="['../','repos']">Repos</button>
         </div>
     </div>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 import { JSONFormat } from 'src/app/shared/_help/jsonformat';
 import { GitDetailsService } from '../services/git-details.service';
 
@@ -21,15 +23,25 @@ export class ProfileComponent implements OnInit {
       });
 
     //  activedRoute.paramMap or activedRoute.params will help us to get params data for url from parent route
-    this.activedRoute.parent?.paramMap.subscribe(params => {
-      console.log(params);
-      this.userName = params.get('username') as string;
-      this.gitService.getProfile(this.userName)
-        .subscribe(data => {
-          console.log(data);
-          this.userDetails = data as JSONFormat;
-        });
-    });
+    // this.activedRoute.parent?.paramMap.subscribe(params => {
+    //   console.log(params);
+    //   this.userName = params.get('username') as string;
+    //   this.gitService.getProfile(this.userName)
+    //     .subscribe(data => {
+    //       console.log(data);
+    //       this.userDetails = data as JSONFormat;
+    //     });
+    // });
+    this.activedRoute.parent?.paramMap
+      .pipe(switchMap(params => {
+        console.log(params);
+        this.userName = params.get('username') as string;
+        return this.gitService.getProfile(this.userName);
+      }
+      )).subscribe(data => {
+        console.log(data);
+        this.userDetails = data as JSONFormat;
+      });
   }
 
 }

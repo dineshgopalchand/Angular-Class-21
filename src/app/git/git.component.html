@@ -16,10 +16,13 @@
 </form>
 
 <div class="git-details" *ngIf="gitUserName">
+    <div class="search-details p-2 mb-1">
+        Searched for : <b>{{gitUserName}} </b>
+    </div>
     <nav class="nav git-nav">
-        <a class="nav-link active" href="#">Profile</a>
-        <a class="nav-link" href="#">Followers</a>
-        <a class="nav-link" href="#">Repo</a>
+        <a class="nav-link" [routerLink]="['profile']" [routerLinkActive]="'active'">Profile</a>
+        <a class="nav-link" [routerLink]="['followers']" [routerLinkActive]="'active'">Followers</a>
+        <a class="nav-link" [routerLink]="['repos']" [routerLinkActive]="'active'">Repo</a>
     </nav>
     <div>
         <!-- <app-profile></app-profile>
