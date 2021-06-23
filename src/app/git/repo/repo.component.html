@@ -1,4 +1,11 @@
-<div class="d-flex m-2" *ngFor="let repo of repoList">
+<!-- <div class="top-navigation">
+    <button class="btn btn-link mr-2" [disabled]="p == 1" routerLink="./" [queryParams]="{p:p-1,perpage:noPerPage}">  &lt;&lt; Previous </button><button class="btn btn-link" [disabled]="noPerPage*p>=repoList.length" routerLink="./" [queryParams]="{p:p+1,perpage:noPerPage}">Next &gt;&gt;</button>
+</div> -->
+<div class="top-navigation">
+    <button class="btn btn-link mr-2" [disabled]="p == 1" routerLink="./" [queryParams]="{p:p-1}" queryParamsHandling="merge">  &lt;&lt; Previous </button><button class="btn btn-link" [disabled]="noPerPage*p>=repoList.length" routerLink="./" [queryParams]="{p:p+1}"
+        queryParamsHandling="merge">Next &gt;&gt;</button>
+</div>
+<div class="d-flex m-2" *ngFor="let repo of repoList | paginate: { itemsPerPage: noPerPage, currentPage: p }">
     <div class="p-2" class="author-details">
         <img [src]="repo.owner.avatar_url" class="author-image" [alt]="repo.owner.login">
         <h4 class="author-name">({{repo.owner.login}})</h4>
@@ -15,3 +22,4 @@
         </div>
     </div>
 </div>
+<pagination-controls class="my-pagination" (pageChange)="pageChanged($event)" (pageBoundsCorrection)="pageChanged($event)" [maxSize]="9" [directionLinks]="true" [autoHide]="true" [responsive]="true" [screenReaderCurrentLabel]="'You\'re on page'"></pagination-controls>
