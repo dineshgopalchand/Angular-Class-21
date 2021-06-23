@@ -1,3 +1,17 @@
-<!-- <div class="d-flex">
-    div
-</div> -->
+<div class="d-flex m-2" *ngFor="let repo of repoList">
+    <div class="p-2" class="author-details">
+        <img [src]="repo.owner.avatar_url" class="author-image" [alt]="repo.owner.login">
+        <h4 class="author-name">({{repo.owner.login}})</h4>
+    </div>
+    <div class="p-2" class="repo">
+        <h4 class="repo-name">
+            <a [href]="repo.svn_url" target="_blank">{{repo.name}}</a>
+        </h4>
+        <p class="repo-details">{{repo.description}}</p>
+        <div class="repo-subscribe d-flex">
+            <p class="mr-2" *ngIf="repo.language"><i class="fas fa-circle"></i> {{repo.language}} | </p>
+            <p class="mr-2" *ngIf="repo.forks"> <i class="fas fa-code-branch"></i> {{repo.forks_count}} | </p>
+            <p class="mr-2"> <i class="far fa-edit"></i> {{repo.updated_at | date:'medium'}}</p>
+        </div>
+    </div>
+</div>
