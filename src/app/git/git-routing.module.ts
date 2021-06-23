@@ -13,10 +13,11 @@ const routes: Routes = [
   {
     path: ':username',
     component: GitComponent,
+    // pathMatch: 'prefix',
     children: [
       {
         path: '',
-        component: ProfileComponent
+        redirectTo: 'profile'
       },
       {
         path: 'profile',

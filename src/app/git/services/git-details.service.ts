@@ -14,4 +14,10 @@ export class GitDetailsService extends DataService {
   getProfile(username: string): Observable<any> {
     return this.fetchData(this.url + username);
   }
+  getRepo(username: string): Observable<any> {
+    return this.fetchData(this.url + username + '/repos');
+  }
+  getFollowers(username: string): Observable<any> {
+    return this.fetchData(this.url + username + '/followers');
+  }
 }
