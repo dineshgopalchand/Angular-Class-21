@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { AppError } from './app-error';
@@ -43,11 +43,23 @@ export class DataService {
             .pipe(catchError(this.handleError));
     }
 
-    fetchData(newURL: string, option?: JSON): Observable<any> {
+    fetchData(newURL: string, option?: OptionDetails): Observable<any> {
         const options = option ? option : {};
         return (this.http.get(newURL, options) as Observable<any>)
             .pipe(catchError(this.handleError));
     }
 
+}
+export interface OptionDetails {
+    headers?: HttpHeaders | {
+        [header: string]: string | string[];
+    } | undefined;
+    observe?: 'body' | undefined;
+    params?: HttpParams | {
+        [param: string]: string | string[];
+    } | undefined;
+    reportProgress?: boolean | undefined;
+    responseType?: 'json' | undefined;
+    withCredentials?: boolean | undefined;
 }
 

@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from '../shared/shared.module';
 import { FollowerComponent } from './follower/follower.component';
 import { GitRoutingModule } from './git-routing.module';
 import { GitComponent } from './git.component';
@@ -18,6 +19,7 @@ import { RepoComponent } from './repo/repo.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     GitRoutingModule,
     ReactiveFormsModule
   ]
