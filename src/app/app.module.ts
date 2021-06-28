@@ -1,4 +1,4 @@
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -25,6 +25,8 @@ import { SharedModule } from './shared/shared.module';
 import { ThemesModule } from './themes/themes.module';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { fakeBackendProvider } from './services/fakebackend/fakebackend';
+import { JwtInterceptor } from './services/jwt.interceptor';
 
 
 // const routes: Routes = [
@@ -66,7 +68,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
   ],
   providers: [
     CoursesService,
-    CourseService
+    CourseService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    },
+
+    // only in devlopment environment use fakeBackendProvider
+    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
