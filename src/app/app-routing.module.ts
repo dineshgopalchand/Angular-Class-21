@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CoursesComponent } from './courses/courses.component';
 import { ContactComponent } from './forms/contact/contact.component';
+import { SigninComponent } from './forms/signin/signin.component';
 import { SignupComponent } from './forms/signup/signup.component';
 import { TodoListComponent } from './forms/todo-list/todo-list.component';
 import { HomeComponent } from './home/home.component';
@@ -30,9 +31,18 @@ const routes: Routes = [
     path: 'post',
     component: PostComponent
   },
+
+  {
+    path: 'user/signup',
+    component: SignupComponent
+  },
+  {
+    path: 'user/signin',
+    component: SigninComponent
+  },
   {
     path: 'user',
-    component: SignupComponent
+    redirectTo: 'user/signin'
   },
   {
     path: 'github',
