@@ -16,25 +16,33 @@ export class JwtInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         // add auth header with jwt if user is logged in and request is to the api url
-        const currentUser = JSON.parse(localStorage.getItem('userinfo') as string) || {};
-        this.authenticationService.currentUserValue = currentUser;
-        const isLoggedIn = (currentUser && currentUser.token) ? true : false;
-        const isApiUrl = request.url.startsWith(environment.API.todolink);
-        console.log({ isApiUrl, isLoggedIn, currentUser });
-        if (isApiUrl) {
-            if (isLoggedIn) {
-                request = request.clone({
-                    setHeaders: {
-                        Authorization: `Bearer ${currentUser.token}`
-                    }
-                });
-            } else {
-                this.router.navigate(['./', 'user'], {
-                    queryParams: {
-                        r: request.url
-                    }
-                });
-            }
+        const currentUser = this.authenticationService.currentUser;
+        const isLoggedIn = this.authenticationService.isLoggedIn;
+        // const isApiUrl = request.url.startsWith(environment.API.todolink);
+        // console.log({ isApiUrl, isLoggedIn, currentUser });
+        // if (isApiUrl) {
+        //     if (isLoggedIn) {
+        //         request = request.clone({
+        //             setHeaders: {
+        //                 Authorization: `Bearer ${currentUser.token}`
+        //             }
+        //         });
+        //     } else {
+        //         this.router.navigate(['./', 'user'], {
+        //             queryParams: {
+        //                 r: request.url
+        //             }
+        //         });
+        //     }
+        // }
+
+
+        if (isLoggedIn) {
+            request = request.clone({
+                setHeaders: {
+                    Authorization: `Bearer ${currentUser.token}`
+                }
+            });
         }
 
         return next.handle(request);

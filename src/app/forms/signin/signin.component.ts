@@ -36,6 +36,10 @@ export class SigninComponent implements OnInit {
         console.log(res);
 
         this.router.navigate(['/']);
+      }, error => {
+        console.log(error);
+        this.signInForm.setErrors({ message: error.message });
+        console.log(this.signInForm);
       });
   }
 
