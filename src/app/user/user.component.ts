@@ -7,6 +7,7 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
+  // this component won't get loaded because this.authService.getUser() will return 401 (as mentioned in fakebacked)
 
   constructor(private authService: AuthenticationService) { }
 
@@ -15,7 +16,6 @@ export class UserComponent implements OnInit {
       .subscribe(res => {
         console.log(res);
       });
-
   }
 
 }

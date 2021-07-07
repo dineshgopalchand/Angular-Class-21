@@ -6,6 +6,7 @@ import { SigninComponent } from './forms/signin/signin.component';
 import { SignupComponent } from './forms/signup/signup.component';
 import { TodoListComponent } from './forms/todo-list/todo-list.component';
 import { AuthGuard } from './guard/auth.guard';
+import { GitAuthGuard } from './guard/git-auth.guard';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PostComponent } from './post/post.component';
@@ -35,7 +36,11 @@ const routes: Routes = [
     component: PostComponent,
     canActivate: [AuthGuard]
   },
-
+  {
+    path: 'user/details',
+    component: UserComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: 'user/signup',
     component: SignupComponent
@@ -49,13 +54,9 @@ const routes: Routes = [
     redirectTo: 'user/signin'
   },
   {
-    path: 'user-details',
-    component: UserComponent,
-    canActivate: [AuthGuard]
-  },
-  {
     path: 'github',
-    loadChildren: () => import('./git/git.module').then(m => m.GitModule)
+    loadChildren: () => import('./git/git.module').then(m => m.GitModule),
+    canLoad: [GitAuthGuard]
   },
   {
     path: '**',

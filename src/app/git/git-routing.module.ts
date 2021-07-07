@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { GitAuthGuard } from '../guard/git-auth.guard';
 import { FollowerComponent } from './follower/follower.component';
 import { GitComponent } from './git.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: ':username',
     component: GitComponent,
     // pathMatch: 'prefix',
+    canActivateChild: [GitAuthGuard],
     children: [
       {
         path: '',

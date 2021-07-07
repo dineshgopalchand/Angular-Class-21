@@ -11,6 +11,6 @@
         <div class="form-group">
             <button class="btn btn-primary form-control" [disabled]="signInForm.invalid">Sign-In</button>
         </div>
-        <div class="alert alert-danger" *ngIf="signInForm.errors">{{signInForm.errors.message}}</div>
+        <div class="alert alert-danger" *ngIf="signInForm.errors">{{signInForm.errors.error}}</div>
     </form>
 </div>
