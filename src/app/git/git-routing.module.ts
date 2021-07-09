@@ -31,7 +31,8 @@ const routes: Routes = [
       },
       {
         path: 'repos',
-        component: RepoComponent
+        component: RepoComponent,
+        canActivate: [GitAuthGuard]
       }
     ]
   }

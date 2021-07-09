@@ -25,7 +25,8 @@ export class AuthenticationService extends DataService {
   }
 
   get isLoggedIn(): boolean {
-    return (this.currentUserValue && this.currentUserValue.token) ? true : false;
+    // return (this.currentUserValue && this.currentUserValue.token) ? true : false;
+    return this.currentUserValue?.token ? true : false;
   }
 
   signin(body: SignInBody): Observable<any> {
