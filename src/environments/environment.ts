@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  name: 'dev',
+  API: {
+    postlink: 'http://localhost:3021/posts',
+    todolink: 'http://localhost:3021/todo',
+    signin: 'http://localhost:3021/api/signin',
+    user: 'http://localhost:3021/api/user'
+  }
 };
 
 /*

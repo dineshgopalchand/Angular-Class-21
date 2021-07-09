@@ -1,0 +1,21 @@
+.author-details {
+    text-align: center;
+    .author-image {
+        width: 125px;
+        border-radius: 50%;
+    }
+    .author-name {
+        font-size: 1em;
+    }
+}
+
+.my-pagination :ng-deep .ngx-pagination .current {
+    background: red;
+}
+
+.top-navigation {
+    position: absolute;
+    right: 18px;
+    background: white;
+    z-index: 2;
+}

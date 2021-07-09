@@ -1,7 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import '~bootstrap/dist/css/bootstrap.min.css';
-@import '~font-awesome/css/font-awesome.min.css';
+// @import '~font-awesome/css/font-awesome.min.css';
+@import '~@fortawesome/fontawesome-free/css/fontawesome.min.css';
+@import '~@fortawesome/fontawesome-free/css/solid.min.css';
+@import '~@fortawesome/fontawesome-free/css/regular.min.css';
 // h2 {
 //     color: red;
 // }
@@ -13,4 +16,8 @@
     to {
         transform: rotate(360deg);
     }
+}
+
+.p-relative {
+    position: relative;
 }

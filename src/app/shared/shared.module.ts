@@ -5,6 +5,8 @@ import { HeaderComponent } from './component/header/header.component';
 import { FooterComponent } from './component/footer/footer.component';
 import { ListingDirective } from './directives/listing.directive';
 import { NameValidationDirective } from './directives/name-validation.directive';
+import { RouterModule } from '@angular/router';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 
@@ -17,7 +19,9 @@ import { NameValidationDirective } from './directives/name-validation.directive'
     NameValidationDirective
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    NgxPaginationModule
   ],
   providers: [
     TitleCasePipe,
@@ -29,7 +33,8 @@ import { NameValidationDirective } from './directives/name-validation.directive'
     HeaderComponent,
     FooterComponent,
     ListingDirective,
-    NameValidationDirective
+    NameValidationDirective,
+    NgxPaginationModule
   ]
 })
 export class SharedModule { }

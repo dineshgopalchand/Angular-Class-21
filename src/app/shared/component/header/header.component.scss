@@ -1,0 +1,38 @@
+.env-details {
+    background: yellow;
+    position: absolute;
+    z-index: 99;
+    width: 132px;
+    transform: rotate( -45deg);
+    height: 50px;
+    text-align: center;
+    top: -6px;
+    left: -62px;
+    padding-top: 21px;
+}
+
+.hignlight {
+    background: blue;
+    font-weight: 500;
+    box-shadow: 2px 2px 2px grey;
+    border-radius: 3px;
+    a.nav-link {
+        color: white !important;
+    }
+}
+
+.logout-icon {
+    font-size: 2.5rem;
+    color: gray;
+    cursor: pointer;
+    &:hover {
+        color: red;
+    }
+}
+
+.user-block {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem .5rem .5rem;
+    position: absolute;
+    top: -2px;
+}

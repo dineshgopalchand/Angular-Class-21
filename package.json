@@ -8,7 +8,9 @@
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
-        "dbstart": "json-server --watch db/db.json --port 3021"
+        "dbstart": "json-server --watch db/db.json --port 3021",
+        "build:qa": "ng build --configuration=qa --output-path=dist/qa",
+        "build:prod": "ng build --prod --output-path=dist/production"
     },
     "private": true,
     "dependencies": {
@@ -20,8 +22,11 @@
         "@angular/platform-browser": "~11.2.9",
         "@angular/platform-browser-dynamic": "~11.2.9",
         "@angular/router": "~11.2.9",
+        "@fortawesome/fontawesome-free": "^5.15.3",
         "bootstrap": "^4.6.0",
         "font-awesome": "^4.7.0",
+        "jquery": "^3.6.0",
+        "ngx-pagination": "^5.1.1",
         "rxjs": "~6.6.0",
         "tslib": "^2.0.0",
         "uuid": "^8.3.2",

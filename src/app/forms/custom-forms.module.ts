@@ -6,6 +6,7 @@ import { SignupComponent } from './signup/signup.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { FormBuilderDemoComponent } from './form-builder-demo/form-builder-demo.component';
 import { ToDoService } from './service/to-do.service';
+import { SigninComponent } from './signin/signin.component';
 
 
 
@@ -14,7 +15,8 @@ import { ToDoService } from './service/to-do.service';
     ContactComponent,
     SignupComponent,
     TodoListComponent,
-    FormBuilderDemoComponent
+    FormBuilderDemoComponent,
+    SigninComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { ToDoService } from './service/to-do.service';
     ContactComponent,
     SignupComponent,
     TodoListComponent,
-    FormBuilderDemoComponent
+    FormBuilderDemoComponent,
+    SigninComponent
   ]
 })
 export class CustomFormsModule { }

@@ -1,0 +1,16 @@
+<div class="signin-form">
+    <form [formGroup]="signInForm" (ngSubmit)="signFormSubmit()">
+        <h3>Sign Form</h3>
+        <hr>
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="username" formControlName="username">
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="password" formControlName="password">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary form-control" [disabled]="signInForm.invalid">Sign-In</button>
+        </div>
+        <div class="alert alert-danger" *ngIf="signInForm.errors">{{signInForm.errors.error}}</div>
+    </form>
+</div>
