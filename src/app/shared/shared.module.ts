@@ -6,7 +6,8 @@ import { FooterComponent } from './component/footer/footer.component';
 import { ListingDirective } from './directives/listing.directive';
 import { NameValidationDirective } from './directives/name-validation.directive';
 import { RouterModule } from '@angular/router';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AllMaterialModule } from './all-material.module';
 
 
 
@@ -21,7 +22,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
   imports: [
     CommonModule,
     RouterModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    AllMaterialModule
   ],
   providers: [
     TitleCasePipe,
@@ -29,6 +31,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     LowerCasePipe
   ],
   exports: [
+    AllMaterialModule,
     SummaryPipe,
     HeaderComponent,
     FooterComponent,

@@ -2,6 +2,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course.component';
@@ -15,19 +16,19 @@ import { CustomFormsModule } from './forms/custom-forms.module';
 import { HomeComponent } from './home/home.component';
 import { LikeModule } from './like/like.module';
 import { LocationMapComponent } from './location-map/location-map.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 import { PipeModule } from './pipe/pipe.module';
 import { PostModule } from './post/post.module';
 import { ResuableDemoComponent } from './resuable-demo/resuable-demo.component';
 import { ResuableComponent } from './resuable/resuable.component';
+import { ErrorInterceptor } from './service/error.interceptor';
 import { CourseService } from './services/course.service';
 import { CoursesService } from './services/courses.service';
+import { fakeBackendProvider } from './services/fakebackend/fakebackend';
+import { JwtInterceptor } from './services/jwt.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { ThemesModule } from './themes/themes.module';
 import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { fakeBackendProvider } from './services/fakebackend/fakebackend';
-import { JwtInterceptor } from './services/jwt.interceptor';
-import { ErrorInterceptor } from './service/error.interceptor';
 import { UserComponent } from './user/user.component';
 
 
@@ -67,7 +68,9 @@ import { UserComponent } from './user/user.component';
     CustomFormsModule,
     HttpClientModule,
     PostModule,
-    LikeModule
+    LikeModule,
+    BrowserAnimationsModule,
+
   ],
   providers: [
     CoursesService,
