@@ -27,6 +27,8 @@ import { TwoWayBindingComponent } from './two-way-binding/two-way-binding.compon
 import { NotFoundComponent } from './not-found/not-found.component';
 import { fakeBackendProvider } from './services/fakebackend/fakebackend';
 import { JwtInterceptor } from './services/jwt.interceptor';
+import { ErrorInterceptor } from './service/error.interceptor';
+import { UserComponent } from './user/user.component';
 
 
 // const routes: Routes = [
@@ -51,7 +53,8 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     LocationMapComponent,
     CoursesListingComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +75,11 @@ import { JwtInterceptor } from './services/jwt.interceptor';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: JwtInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
       multi: true
     },
 

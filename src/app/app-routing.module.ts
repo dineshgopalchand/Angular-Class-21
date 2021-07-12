@@ -5,9 +5,12 @@ import { ContactComponent } from './forms/contact/contact.component';
 import { SigninComponent } from './forms/signin/signin.component';
 import { SignupComponent } from './forms/signup/signup.component';
 import { TodoListComponent } from './forms/todo-list/todo-list.component';
+import { AuthGuard } from './guard/auth.guard';
+import { GitAuthGuard } from './guard/git-auth.guard';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { PostComponent } from './post/post.component';
+import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
   {
@@ -25,13 +28,19 @@ const routes: Routes = [
   },
   {
     path: 'task',
-    component: TodoListComponent
+    component: TodoListComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'post',
-    component: PostComponent
+    component: PostComponent,
+    canActivate: [AuthGuard]
   },
-
+  {
+    path: 'user/details',
+    component: UserComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: 'user/signup',
     component: SignupComponent
@@ -46,7 +55,8 @@ const routes: Routes = [
   },
   {
     path: 'github',
-    loadChildren: () => import('./git/git.module').then(m => m.GitModule)
+    loadChildren: () => import('./git/git.module').then(m => m.GitModule),
+    canLoad: [GitAuthGuard]
   },
   {
     path: '**',
